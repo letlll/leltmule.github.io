@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="CN">
 <head>
@@ -56,7 +55,7 @@
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载迟缓 请启浏览器缓存</p>
+                    <p>加载迟缓 宜启浏览器缓存</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -207,22 +206,40 @@ MarkDown 语法学习</p>
 英语口语和写作表达</p>
 </li>
 </ul>
-<h4 id="3-任务进度表"><a href="#3-任务进度表" class="headerlink" title="3.任务进度表"></a>3.任务进度表</h4><pre><code class="mermaid">
-gantt
-dateFormat  MM-DD
-    axisFormat  %m-%d
-    section 学习任务
-    MarkDown 学习          :active,des1, 08-11, 08-13
-    博客样式和评论，数据优化   :active,des2, 08-13, 08-19
-    计算机二级C语言程序设计    :         des3, 08-16, 08-31
-    英语口语和写作表达         :         des4, 08-20, 09-05
-    
-    
-</code></pre>
+<h4 id="3-任务进度表"><a href="#3-任务进度表" class="headerlink" title="3.任务进度表"></a>3.任务进度表</h4><table>
+<thead>
+<tr>
+<th align="center">学习任务</th>
+<th align="center">起</th>
+<th align="center">落</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">MarkDown 学习</td>
+<td align="center">08-11</td>
+<td align="center">08-13</td>
+</tr>
+<tr>
+<td align="center">博客样式和评论，数据优化</td>
+<td align="center">08-13</td>
+<td align="center">08-19</td>
+</tr>
+<tr>
+<td align="center">计算机二级C语言程序设计</td>
+<td align="center">08-16</td>
+<td align="center">08-31</td>
+</tr>
+<tr>
+<td align="center">英语口语和写作表达</td>
+<td align="center">08-20</td>
+<td align="center">09-05</td>
+</tr>
+</tbody></table>
 <h4 id="4-既辟"><a href="#4-既辟" class="headerlink" title="4.既辟"></a>4.既辟</h4><h6 id="页已开矣"><a href="#页已开矣" class="headerlink" title="页已开矣"></a>页已开矣</h6><blockquote>
 <p><a href="https://letlmule.fun/">letlmule</a></p>
 </blockquote>
 <h4 id="5-即展"><a href="#5-即展" class="headerlink" title="5.即展"></a>5.即展</h4><h6 id="页将启焉"><a href="#页将启焉" class="headerlink" title="页将启焉"></a>页将启焉</h6><blockquote>
+<p>about<br>tags<br>categories</p>
 </blockquote>
 <h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h3 id="1-（延时）更新命令"><a href="#1-（延时）更新命令" class="headerlink" title="1.（延时）更新命令"></a>1.（延时）更新命令</h3><pre><code class="sh">git config --global http.lowSpeedLimit 0
 git config --global http.lowSpeedTime 999999
@@ -240,7 +257,6 @@ hexo deploy
     
     
 </div>
-
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -271,10 +287,9 @@ hexo deploy
     <script src="/js/main.js"></script>
     
     
-
-
-
-
+    
+    
+    
     
 </body>
 </html>
