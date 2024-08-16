@@ -177,8 +177,7 @@
     
     <div class="content" v-pre>
         <ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E6%91%98%E8%A6%81">基本语法（摘要）</a>
-<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E6%91%98%E8%A6%81">基本语法（摘要）</a><ul>
 <li><a href="#1-%E6%A0%87%E9%A2%98-headings">1. 标题 (Headings)</a></li>
 <li><a href="#2-%E8%84%9A%E6%B3%A8-footnotes">2. 脚注 (Footnotes)</a></li>
 <li><a href="#3-%E5%88%97%E8%A1%A8-lists">3. 列表 (Lists)</a></li>
@@ -187,8 +186,7 @@
 <li><a href="#6-%E9%AB%98%E7%BA%A7%E9%93%BE%E6%8E%A5-advanced-links">6. 高级链接 (Advanced Links)</a></li>
 </ul>
 </li>
-<li><a href="#%E5%9B%BE%E8%A1%A8">图表</a>
-<ul>
+<li><a href="#%E5%9B%BE%E8%A1%A8">图表</a><ul>
 <li><a href="#1-%E6%A8%AA%E5%90%91%E6%B5%81%E7%A8%8B%E5%9B%BE">1. 横向流程图</a></li>
 <li><a href="#2-%E7%AB%96%E5%90%91%E6%B5%81%E7%A8%8B%E5%9B%BE">2. 竖向流程图</a></li>
 <li><a href="#3-%E6%A0%87%E5%87%86%E6%B5%81%E7%A8%8B%E5%9B%BE">3. 标准流程图</a></li>
@@ -199,67 +197,56 @@
 <li><a href="#8-%E7%94%98%E7%89%B9%E5%9B%BE">8. 甘特图</a></li>
 </ul>
 </li>
-<li><a href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%A4%A7%E7%BA%B2">自动生成大纲</a><br>
-- <a href="#%E4%BD%BF%E7%94%A8-markdown-all-in-one-%E6%8F%92%E4%BB%B6">使用 <code>Markdown All in One</code> 插件</a><br>
-- <a href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7">使用命令行工具</a></li>
-<li><a href="#vscode%E7%8E%AF%E5%A2%83">VSCode环境</a>
-<ul>
+<li><a href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%A4%A7%E7%BA%B2">自动生成大纲</a><br>- <a href="#%E4%BD%BF%E7%94%A8-markdown-all-in-one-%E6%8F%92%E4%BB%B6">使用 <code>Markdown All in One</code> 插件</a><br>- <a href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7">使用命令行工具</a></li>
+<li><a href="#vscode%E7%8E%AF%E5%A2%83">VSCode环境</a><ul>
 <li><a href="#%E5%9C%A8-vscode-%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83">在 VSCode 中配置环境</a></li>
 </ul>
 </li>
 </ul>
 <span id="more"></span>
-<h1>基本语法（摘要）</h1>
-<h3 id="1-标题-Headings">1. 标题 (Headings)</h3>
-<p>使用 <code>#</code> 符号来表示不同级别的标题。<code>#</code> 的数量越多，标题级别越低。</p>
-<pre><code class="language-markdown"># 一级标题
+
+<h1 id="基本语法（摘要）"><a href="#基本语法（摘要）" class="headerlink" title="基本语法（摘要）"></a>基本语法（摘要）</h1><h3 id="1-标题-Headings"><a href="#1-标题-Headings" class="headerlink" title="1. 标题 (Headings)"></a>1. 标题 (Headings)</h3><p>使用 <code>#</code> 符号来表示不同级别的标题。<code>#</code> 的数量越多，标题级别越低。</p>
+<pre><code class="markdown"># 一级标题
 ## 二级标题
 ### 三级标题
 #### 四级标题
 ##### 五级标题
 ###### 六级标题
 </code></pre>
-<h3 id="2-脚注-Footnotes">2. 脚注 (Footnotes)</h3>
-<p>Markdown 脚注可以通过以下语法添加：</p>
-<pre><code class="language-markdown">这是一个带有脚注的句子[^1]。
+<h3 id="2-脚注-Footnotes"><a href="#2-脚注-Footnotes" class="headerlink" title="2. 脚注 (Footnotes)"></a>2. 脚注 (Footnotes)</h3><p>Markdown 脚注可以通过以下语法添加：</p>
+<pre><code class="markdown">这是一个带有脚注的句子[^1]。
 
 [^1]: 这是脚注的内容。
 </code></pre>
-<h3 id="3-列表-Lists">3. 列表 (Lists)</h3>
-<p><strong>无序列表</strong>使用 <code>-</code>、<code>*</code> 或 <code>+</code> 开头：</p>
-<pre><code class="language-markdown">- 项目 1
+<h3 id="3-列表-Lists"><a href="#3-列表-Lists" class="headerlink" title="3. 列表 (Lists)"></a>3. 列表 (Lists)</h3><p><strong>无序列表</strong>使用 <code>-</code>、<code>*</code> 或 <code>+</code> 开头：</p>
+<pre><code class="markdown">- 项目 1
 - 项目 2
   - 嵌套项目 2.1
   - 嵌套项目 2.2
 </code></pre>
 <p><strong>有序列表</strong>使用数字加 <code>.</code> 开头：</p>
-<pre><code class="language-markdown">1. 第一项
+<pre><code class="markdown">1. 第一项
 2. 第二项
    1. 嵌套第一项
    2. 嵌套第二项
 </code></pre>
-<h3 id="4-网络链接-Hyperlinks">4. 网络链接 (Hyperlinks)</h3>
-<p>插入超链接的基本语法如下：</p>
-<pre><code class="language-markdown">[显示文本](https://www.example.com)
+<h3 id="4-网络链接-Hyperlinks"><a href="#4-网络链接-Hyperlinks" class="headerlink" title="4. 网络链接 (Hyperlinks)"></a>4. 网络链接 (Hyperlinks)</h3><p>插入超链接的基本语法如下：</p>
+<pre><code class="markdown">[显示文本](https://www.example.com)
 </code></pre>
-<h3 id="5-图片引入-Images">5. 图片引入 (Images)</h3>
-<p>引入图片的语法与链接类似，只是前面加了一个感叹号 <code>!</code>：</p>
-<pre><code class="language-markdown">![替代文本](https://www.example.com/image.png)
+<h3 id="5-图片引入-Images"><a href="#5-图片引入-Images" class="headerlink" title="5. 图片引入 (Images)"></a>5. 图片引入 (Images)</h3><p>引入图片的语法与链接类似，只是前面加了一个感叹号 <code>!</code>：</p>
+<pre><code class="markdown">![替代文本](https://www.example.com/image.png)
 </code></pre>
-<h3 id="6-高级链接-Advanced-Links">6. 高级链接 (Advanced Links)</h3>
-<p>可以通过标签引用来实现高级链接：</p>
-<pre><code class="language-markdown">这是一个 [Google][1] 的链接。
+<h3 id="6-高级链接-Advanced-Links"><a href="#6-高级链接-Advanced-Links" class="headerlink" title="6. 高级链接 (Advanced Links)"></a>6. 高级链接 (Advanced Links)</h3><p>可以通过标签引用来实现高级链接：</p>
+<pre><code class="markdown">这是一个 [Google][1] 的链接。
 
 [1]: https://www.google.com "Google 的链接"
 </code></pre>
 <hr>
-<h1>图表</h1>
-<p>图表大部分都使用了 <code>Mermaid</code> 语法，部分使用了 <code>Flowchart.js</code>，需要在 VSCode 中安装相应的插件才能正确预览和渲染。</p>
+<h1 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h1><p>图表大部分都使用了 <code>Mermaid</code> 语法，部分使用了 <code>Flowchart.js</code>，需要在 VSCode 中安装相应的插件才能正确预览和渲染。</p>
 <p><em>【部分图表，未能显示，待后续更新。】</em></p>
-<h3 id="1-横向流程图">1. 横向流程图</h3>
-<p><strong>用途</strong>：用于展示流程或工作流的步骤，通常从左到右进行。</p>
+<h3 id="1-横向流程图"><a href="#1-横向流程图" class="headerlink" title="1. 横向流程图"></a>1. 横向流程图</h3><p><strong>用途</strong>：用于展示流程或工作流的步骤，通常从左到右进行。</p>
 <p><strong>Mermaid 源码</strong>：</p>
-<pre><code class="language-mermaid">graph LR
+<pre><code class="mermaid">graph LR
 A[方形] --&gt;B(圆角)
     B --&gt; C{条件a}
     C --&gt;|a=1| D[结果1]
@@ -273,10 +260,9 @@ A[方形] --&gt;B(圆角)
 <li><code>--&gt;</code> 用于连接节点。</li>
 <li><code>{条件a}</code> 表示条件判断，<code>|a=1|</code> 是连接的条件。</li>
 </ul>
-<h3 id="2-竖向流程图">2. 竖向流程图</h3>
-<p><strong>用途</strong>：类似于横向流程图，但流程从上到下显示。</p>
+<h3 id="2-竖向流程图"><a href="#2-竖向流程图" class="headerlink" title="2. 竖向流程图"></a>2. 竖向流程图</h3><p><strong>用途</strong>：类似于横向流程图，但流程从上到下显示。</p>
 <p><strong>Mermaid 源码</strong>：</p>
-<pre><code class="language-mermaid">graph TD
+<pre><code class="mermaid">graph TD
 A[方形] --&gt; B(圆角)
     B --&gt; C{条件a}
     C --&gt; |a=1| D[结果1]
@@ -288,10 +274,9 @@ A[方形] --&gt; B(圆角)
 <li><code>graph TD</code> 表示流程图从上到下（Top to Down）。</li>
 <li>其他语法与横向流程图相同。</li>
 </ul>
-<h3 id="3-标准流程图">3. 标准流程图</h3>
-<p><strong>用途</strong>：用于展示标准的业务流程，适合用于简单的逻辑操作描述。</p>
+<h3 id="3-标准流程图"><a href="#3-标准流程图" class="headerlink" title="3. 标准流程图"></a>3. 标准流程图</h3><p><strong>用途</strong>：用于展示标准的业务流程，适合用于简单的逻辑操作描述。</p>
 <p><strong>Flowchart.js 源码</strong>：</p>
-<pre><code class="language-flow">st=&gt;start: 开始框
+<pre><code class="flow">st=&gt;start: 开始框
 op=&gt;operation: 处理框
 cond=&gt;condition: 判断框(是或否?)
 sub1=&gt;subroutine: 子流程
@@ -309,10 +294,9 @@ cond(no)-&gt;sub1(right)-&gt;op
 <li><code>-&gt;</code> 用于连接节点。</li>
 <li><code>cond(yes)</code> 表示条件为 “是” 的连接。</li>
 </ul>
-<h3 id="4-标准流程图（横向）">4. 标准流程图（横向）</h3>
-<p><strong>用途</strong>：标准流程图的横向展示。</p>
+<h3 id="4-标准流程图（横向）"><a href="#4-标准流程图（横向）" class="headerlink" title="4. 标准流程图（横向）"></a>4. 标准流程图（横向）</h3><p><strong>用途</strong>：标准流程图的横向展示。</p>
 <p><strong>Flowchart.js 源码</strong>：</p>
-<pre><code class="language-flow">st=&gt;start: 开始框
+<pre><code class="flow">st=&gt;start: 开始框
 op=&gt;operation: 处理框
 cond=&gt;condition: 判断框(是或否?)
 sub1=&gt;subroutine: 子流程
@@ -326,10 +310,9 @@ cond(no)-&gt;sub1(right)-&gt;op
 <ul>
 <li>在 <code>Flowchart.js</code> 中，<code>right</code> 和 <code>bottom</code> 可以用于指定流程的方向。</li>
 </ul>
-<h3 id="5-UML-时序图">5. UML 时序图</h3>
-<p><strong>用途</strong>：展示对象之间的交互顺序，常用于描述系统中的消息传递过程。</p>
+<h3 id="5-UML-时序图"><a href="#5-UML-时序图" class="headerlink" title="5. UML 时序图"></a>5. UML 时序图</h3><p><strong>用途</strong>：展示对象之间的交互顺序，常用于描述系统中的消息传递过程。</p>
 <p><strong>Mermaid 源码</strong>：</p>
-<pre><code class="language-sequence">对象A-&gt;对象B: 对象B你好吗?（请求）
+<pre><code class="sequence">对象A-&gt;对象B: 对象B你好吗?（请求）
 Note right of 对象B: 对象B的描述
 Note left of 对象A: 对象A的描述(提示)
 对象B--&gt;对象A: 我很好(响应)
@@ -341,10 +324,9 @@ Note left of 对象A: 对象A的描述(提示)
 <li><code>Note right of 对象B</code> 表示在对象B右侧添加注释。</li>
 <li><code>--&gt;</code> 表示返回的消息。</li>
 </ul>
-<h3 id="6-复杂的-UML-时序图">6. 复杂的 UML 时序图</h3>
-<p><strong>用途</strong>：描述更复杂的交互过程，包含多个对象和消息。</p>
+<h3 id="6-复杂的-UML-时序图"><a href="#6-复杂的-UML-时序图" class="headerlink" title="6. 复杂的 UML 时序图"></a>6. 复杂的 UML 时序图</h3><p><strong>用途</strong>：描述更复杂的交互过程，包含多个对象和消息。</p>
 <p><strong>Mermaid 源码</strong>：</p>
-<pre><code class="language-sequence">Title: 标题：复杂使用
+<pre><code class="sequence">Title: 标题：复杂使用
 对象A-&gt;对象B: 对象B你好吗?（请求）
 Note right of 对象B: 对象B的描述
 Note left of 对象A: 对象A的描述(提示)
@@ -362,10 +344,9 @@ Note right of C: 没人陪我玩
 <li><code>Note over 小三,对象B</code> 表示跨越两个对象的注释。</li>
 <li><code>--&gt;&gt;</code> 表示异步消息。</li>
 </ul>
-<h3 id="7-UML-标准时序图">7. UML 标准时序图</h3>
-<p><strong>用途</strong>：用于描述系统中多个对象之间的标准交互顺序。</p>
+<h3 id="7-UML-标准时序图"><a href="#7-UML-标准时序图" class="headerlink" title="7. UML 标准时序图"></a>7. UML 标准时序图</h3><p><strong>用途</strong>：用于描述系统中多个对象之间的标准交互顺序。</p>
 <p><strong>Mermaid 源码</strong>：</p>
-<pre><code class="language-mermaid">sequenceDiagram
+<pre><code class="mermaid">sequenceDiagram
     participant 张三
     participant 李四
     张三-&gt;王五: 王五你好吗？
@@ -382,10 +363,9 @@ Note right of C: 没人陪我玩
 <li><code>loop</code> 表示一个循环过程。</li>
 <li><code>&lt;br/&gt;</code> 可以用于在注释中换行。</li>
 </ul>
-<h3 id="8-甘特图">8. 甘特图</h3>
-<p><strong>用途</strong>：用于项目管理中，展示任务的时间安排和进展。</p>
+<h3 id="8-甘特图"><a href="#8-甘特图" class="headerlink" title="8. 甘特图"></a>8. 甘特图</h3><p><strong>用途</strong>：用于项目管理中，展示任务的时间安排和进展。</p>
 <p><strong>Mermaid 源码</strong>：</p>
-<pre><code class="language-mermaid">gantt
+<pre><code class="mermaid">gantt
     dateFormat  YYYY-MM-DD
     title 软件开发甘特图
     section 设计
@@ -410,35 +390,28 @@ Note right of C: 没人陪我玩
 <li><code>section</code> 用于定义任务的分类。</li>
 </ul>
 <hr>
-<h1>自动生成大纲</h1>
-<p>如果您的 Markdown 文件比较大，手动创建大纲可能比较繁琐，您可以使用 VSCode 插件或命令行工具自动生成。</p>
-<h4 id="使用-Markdown-All-in-One-插件">使用 <code>Markdown All in One</code> 插件</h4>
-<ol>
-<li>
-<p><strong>安装插件</strong>：</p>
+<h1 id="自动生成大纲"><a href="#自动生成大纲" class="headerlink" title="自动生成大纲"></a>自动生成大纲</h1><p>如果您的 Markdown 文件比较大，手动创建大纲可能比较繁琐，您可以使用 VSCode 插件或命令行工具自动生成。</p>
+<h4 id="使用-Markdown-All-in-One-插件"><a href="#使用-Markdown-All-in-One-插件" class="headerlink" title="使用 Markdown All in One 插件"></a>使用 <code>Markdown All in One</code> 插件</h4><ol>
+<li><p><strong>安装插件</strong>：</p>
 <ul>
 <li>在 VSCode 的扩展市场搜索并安装 <code>Markdown All in One</code> 插件。</li>
 </ul>
 </li>
-<li>
-<p><strong>生成大纲</strong>：</p>
+<li><p><strong>生成大纲</strong>：</p>
 <ul>
 <li>打开 Markdown 文件，然后使用快捷键 <code>Ctrl + Shift + P</code> 调出命令面板。</li>
 <li>输入 <code>Markdown All in One: Create Table of Contents</code>，选择后插件会自动在当前文件中插入一个大纲。</li>
 </ul>
 </li>
 </ol>
-<h4 id="使用命令行工具">使用命令行工具</h4>
-<p>您也可以使用命令行工具，如 <code>doctoc</code> 来生成大纲：</p>
+<h4 id="使用命令行工具"><a href="#使用命令行工具" class="headerlink" title="使用命令行工具"></a>使用命令行工具</h4><p>您也可以使用命令行工具，如 <code>doctoc</code> 来生成大纲：</p>
 <ol>
-<li>
-<p><strong>安装 <code>doctoc</code></strong>：</p>
+<li><p>**安装 <code>doctoc</code>**：</p>
 <ul>
 <li>使用 npm 安装 <code>doctoc</code>：<code>npm install -g doctoc</code></li>
 </ul>
 </li>
-<li>
-<p><strong>生成大纲</strong>：</p>
+<li><p><strong>生成大纲</strong>：</p>
 <ul>
 <li>在终端中导航到您的 Markdown 文件目录，运行命令：<code>doctoc your-file.md</code></li>
 <li><code>doctoc</code> 会自动扫描文件中的标题，并在文件的开头插入一个大纲。</li>
@@ -446,19 +419,14 @@ Note right of C: 没人陪我玩
 </li>
 </ol>
 <hr>
-<h1>VSCode环境</h1>
-<p>VSCode 环境配置</p>
-<h3 id="在-VSCode-中配置环境">在 VSCode 中配置环境</h3>
-<ol>
-<li>
-<p><strong>安装 Markdown 插件</strong>：</p>
+<h1 id="VSCode环境"><a href="#VSCode环境" class="headerlink" title="VSCode环境"></a>VSCode环境</h1><p>VSCode 环境配置</p>
+<h3 id="在-VSCode-中配置环境"><a href="#在-VSCode-中配置环境" class="headerlink" title="在 VSCode 中配置环境"></a>在 VSCode 中配置环境</h3><ol>
+<li><p><strong>安装 Markdown 插件</strong>：</p>
 <ul>
 <li>打开 VSCode，点击左侧的扩展图标（四个方块）。</li>
-<li>搜索并安装以下插件：
-<ul>
+<li>搜索并安装以下插件：<ul>
 <li><strong>Markdown All in One</strong>：提供了增强的 Markdown 支持，包括任务列表、表格和脚注等。</li>
-<li>
-<ul>
+<li><ul>
 <li><strong>Mermaid Markdown Syntax Highlighting</strong>：提供 Mermaid 语法的高亮和渲染支持。</li>
 </ul>
 </li>
@@ -468,22 +436,19 @@ Note right of C: 没人陪我玩
 </li>
 </ul>
 </li>
-<li>
-<p><strong>使用 Markdown 预览功能</strong>：</p>
+<li><p><strong>使用 Markdown 预览功能</strong>：</p>
 <ul>
 <li>打开 Markdown 文件（<code>.md</code> 文件）。</li>
 <li>按 <code>Ctrl + Shift + V</code> 可以打开 Markdown 的预览窗口。</li>
 <li>也可以右键点击文件标签，然后选择 “Open Preview”。</li>
 </ul>
 </li>
-<li>
-<p><strong>启用任务列表和脚注</strong>：</p>
+<li><p><strong>启用任务列表和脚注</strong>：</p>
 <ul>
 <li>插件安装完成后，确保在设置中启用了相关选项，例如任务列表和脚注支持。一般情况下，插件会自动启用这些功能。</li>
 </ul>
 </li>
-<li>
-<p><strong>实时预览</strong>：</p>
+<li><p><strong>实时预览</strong>：</p>
 <ul>
 <li>如果需要实时预览，可以使用 “Markdown Preview Enhanced” 插件，该插件提供了一个更强大的实时预览功能。</li>
 </ul>
