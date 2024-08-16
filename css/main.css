@@ -3,6 +3,9 @@
     margin-top: 100px;
     padding: 20px;
 }
+.code-content {
+    white-space: pre-line;
+}
 #archives .categories-tags {
     margin: auto;
     margin-bottom: 50px;
