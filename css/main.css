@@ -4,7 +4,7 @@
     padding: 20px;
 }
 .code-content {
-    white-space: pre-line;
+    white-space:pre-wrap;
 }
 #archives .categories-tags {
     margin: auto;
