@@ -176,7 +176,7 @@
     </div>
     
     <div class="content" v-pre>
-        <pre><code class="language-mermaid">mindmap
+        <pre><code class="mermaid">mindmap
   root((回溯法))
     核心概念
       选择
@@ -210,34 +210,29 @@
 <blockquote>
 <p>[!question]</p>
 </blockquote>
-<p><strong>回溯法</strong>：八皇后问题、0-1 背包问题、装载问题。<strong>回溯法</strong>：适合探索所有可能解的组合问题，如八皇后、0-1 背包、装载问题等。  <strong>深入解释算法原理</strong>- <strong>理论学习：</strong> 阅读经典教材，如《算法导论》，了解算法的数学基础和设计思想。- <strong>算法推导：</strong> 理解算法的推导过程，为什么这样设计。我也需要你用markdown图表和mermaid 的mindmap分析逻辑，java代码示例以及代码的作用和解释。</p>
+<p> <strong>回溯法</strong>：八皇后问题、0-1 背包问题、装载问题。<strong>回溯法</strong>：适合探索所有可能解的组合问题，如八皇后、0-1 背包、装载问题等。  <strong>深入解释算法原理</strong>- <strong>理论学习：</strong> 阅读经典教材，如《算法导论》，了解算法的数学基础和设计思想。- <strong>算法推导：</strong> 理解算法的推导过程，为什么这样设计。我也需要你用markdown图表和mermaid 的mindmap分析逻辑，java代码示例以及代码的作用和解释。</p>
 <hr>
-<h3 id="深入理解回溯法">深入理解回溯法</h3>
-<p>回溯法（Backtracking）是一种系统化的搜索策略，用于在解决组合优化问题时探索所有可能的解决方案。它通过逐步构建候选解，并在发现当前路径不可能产生有效解时进行“回溯”，从而有效地缩小搜索空间。</p>
+<h3 id="深入理解回溯法"><a href="#深入理解回溯法" class="headerlink" title="深入理解回溯法"></a>深入理解回溯法</h3><p>回溯法（Backtracking）是一种系统化的搜索策略，用于在解决组合优化问题时探索所有可能的解决方案。它通过逐步构建候选解，并在发现当前路径不可能产生有效解时进行“回溯”，从而有效地缩小搜索空间。</p>
 <span id="more"></span>
+
 <hr>
-<h4 id="目录">目录</h4>
-<ol>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ol>
 <li><a href="#%E5%9B%9E%E6%BA%AF%E6%B3%95%E6%A6%82%E8%BF%B0">回溯法概述</a></li>
-<li><a href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86">算法原理</a>
-<ul>
+<li><a href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86">算法原理</a><ul>
 <li><a href="#%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0">理论学习</a></li>
 <li><a href="#%E7%AE%97%E6%B3%95%E6%8E%A8%E5%AF%BC">算法推导</a></li>
 </ul>
 </li>
-<li><a href="#%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90">逻辑分析</a>
-<ul>
+<li><a href="#%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90">逻辑分析</a><ul>
 <li><a href="#%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE">思维导图</a></li>
 </ul>
 </li>
-<li><a href="#Java%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B">Java代码示例</a>
-<ul>
+<li><a href="#Java%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B">Java代码示例</a><ul>
 <li><a href="#%E7%A4%BA%E4%BE%8B%E4%B8%80-%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98">示例一：八皇后问题</a></li>
 <li><a href="#%E7%A4%BA%E4%BE%8B%E4%BA%8C-0-1-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98">示例二：0-1 背包问题</a></li>
 </ul>
 </li>
-<li><a href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A">代码解释</a>
-<ul>
+<li><a href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A">代码解释</a><ul>
 <li><a href="#%E7%A4%BA%E4%BE%8B%E4%B8%80%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A">示例一代码解释</a></li>
 <li><a href="#%E7%A4%BA%E4%BE%8B%E4%BA%8C%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A">示例二代码解释</a></li>
 </ul>
@@ -245,8 +240,7 @@
 <li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
 </ol>
 <hr>
-<h3 id="回溯法概述">回溯法概述</h3>
-<p><strong>回溯法</strong>是一种通过尝试构建所有可能的解决方案来解决问题的方法。当发现某个路径不满足问题的约束条件时，立即停止沿该路径的探索，并返回到上一步进行其他可能的尝试。回溯法特别适用于以下类型的问题：</p>
+<h3 id="回溯法概述"><a href="#回溯法概述" class="headerlink" title="回溯法概述"></a>回溯法概述</h3><p><strong>回溯法</strong>是一种通过尝试构建所有可能的解决方案来解决问题的方法。当发现某个路径不满足问题的约束条件时，立即停止沿该路径的探索，并返回到上一步进行其他可能的尝试。回溯法特别适用于以下类型的问题：</p>
 <p><strong>适用场景：</strong></p>
 <ul>
 <li><strong>八皇后问题</strong></li>
@@ -263,24 +257,19 @@
 <li><strong>目标（Goal）：</strong> 达到问题的目标状态，即找到一个或所有的有效解。</li>
 </ol>
 <hr>
-<h3 id="算法原理">算法原理</h3>
-<h4 id="理论学习">理论学习</h4>
-<p>回溯法的设计基于以下原则：</p>
+<h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><h4 id="理论学习"><a href="#理论学习" class="headerlink" title="理论学习"></a>理论学习</h4><p>回溯法的设计基于以下原则：</p>
 <ol>
-<li>
-<p><strong>系统化搜索：</strong></p>
+<li><p><strong>系统化搜索：</strong></p>
 <ul>
 <li>回溯法系统地枚举所有可能的候选解，通过深度优先的方式逐步构建解决方案。</li>
 </ul>
 </li>
-<li>
-<p><strong>剪枝（Pruning）：</strong></p>
+<li><p><strong>剪枝（Pruning）：</strong></p>
 <ul>
 <li>在探索过程中，通过提前判断当前部分解是否可能导致有效解，如果不可能，则停止进一步探索该路径，节省计算资源。</li>
 </ul>
 </li>
-<li>
-<p><strong>递归实现：</strong></p>
+<li><p><strong>递归实现：</strong></p>
 <ul>
 <li>回溯法通常通过递归函数实现，每一层递归代表决策树中的一个节点。</li>
 </ul>
@@ -288,45 +277,37 @@
 </ol>
 <p><strong>回溯法的步骤：</strong></p>
 <ol>
-<li>
-<p><strong>定义问题的解空间树：</strong></p>
+<li><p><strong>定义问题的解空间树：</strong></p>
 <ul>
 <li>将问题的所有可能解组织成一个树形结构，每个节点代表部分解。</li>
 </ul>
 </li>
-<li>
-<p><strong>选择策略：</strong></p>
+<li><p><strong>选择策略：</strong></p>
 <ul>
 <li>在每一步选择一个可能的选项，向下递归探索。</li>
 </ul>
 </li>
-<li>
-<p><strong>约束检查：</strong></p>
+<li><p><strong>约束检查：</strong></p>
 <ul>
 <li>在选择过程中，检查当前部分解是否满足问题的约束条件。</li>
 </ul>
 </li>
-<li>
-<p><strong>剪枝操作：</strong></p>
+<li><p><strong>剪枝操作：</strong></p>
 <ul>
 <li>如果当前部分解不满足条件，立即回溯，尝试其他选项。</li>
 </ul>
 </li>
-<li>
-<p><strong>记录解：</strong></p>
+<li><p><strong>记录解：</strong></p>
 <ul>
 <li>当达到问题的目标状态时，记录或输出当前的解。</li>
 </ul>
 </li>
 </ol>
-<h4 id="算法推导">算法推导</h4>
-<p>以<strong>八皇后问题</strong>为例，回溯法通过逐步在棋盘上放置皇后，确保每个皇后之间不在同一行、同一列或同一对角线上。如果发现当前放置导致冲突，则回溯并尝试其他位置。</p>
+<h4 id="算法推导"><a href="#算法推导" class="headerlink" title="算法推导"></a>算法推导</h4><p>以<strong>八皇后问题</strong>为例，回溯法通过逐步在棋盘上放置皇后，确保每个皇后之间不在同一行、同一列或同一对角线上。如果发现当前放置导致冲突，则回溯并尝试其他位置。</p>
 <hr>
 <hr>
-<h3 id="Java代码示例">Java代码示例</h3>
-<h4 id="示例一：八皇后问题">示例一：八皇后问题</h4>
-<p>八皇后问题要求在8×8的棋盘上放置8个皇后，使得任何两个皇后不在同一行、同一列或同一对角线上。</p>
-<pre><code class="language-java">import java.util.ArrayList;
+<h3 id="Java代码示例"><a href="#Java代码示例" class="headerlink" title="Java代码示例"></a>Java代码示例</h3><h4 id="示例一：八皇后问题"><a href="#示例一：八皇后问题" class="headerlink" title="示例一：八皇后问题"></a>示例一：八皇后问题</h4><p>八皇后问题要求在8×8的棋盘上放置8个皇后，使得任何两个皇后不在同一行、同一列或同一对角线上。</p>
+<pre><code class="java">import java.util.ArrayList;
 import java.util.List;
 
 public class NQueens {
@@ -393,9 +374,8 @@ public class NQueens {
     }
 }
 </code></pre>
-<h4 id="示例二：0-1-背包问题">示例二：0-1 背包问题</h4>
-<p>0-1 背包问题要求在不超过背包容量的情况下，选择物品使得总价值最大。每个物品只能选择一次。</p>
-<pre><code class="language-java">import java.util.ArrayList;
+<h4 id="示例二：0-1-背包问题"><a href="#示例二：0-1-背包问题" class="headerlink" title="示例二：0-1 背包问题"></a>示例二：0-1 背包问题</h4><p>0-1 背包问题要求在不超过背包容量的情况下，选择物品使得总价值最大。每个物品只能选择一次。</p>
+<pre><code class="java">import java.util.ArrayList;
 import java.util.List;
 
 public class KnapsackBacktracking {
@@ -444,50 +424,41 @@ public class KnapsackBacktracking {
 }
 </code></pre>
 <hr>
-<h3 id="代码解释">代码解释</h3>
-<h4 id="示例一代码解释：八皇后问题">示例一代码解释：八皇后问题</h4>
-<ol>
-<li>
-<p><strong>类定义：</strong></p>
+<h3 id="代码解释"><a href="#代码解释" class="headerlink" title="代码解释"></a>代码解释</h3><h4 id="示例一代码解释：八皇后问题"><a href="#示例一代码解释：八皇后问题" class="headerlink" title="示例一代码解释：八皇后问题"></a>示例一代码解释：八皇后问题</h4><ol>
+<li><p><strong>类定义：</strong></p>
 <ul>
 <li><code>NQueens</code> 类包含解决八皇后问题的方法。</li>
 <li><code>size</code>：棋盘的大小（默认8）。</li>
 <li><code>solutions</code>：存储所有可能的解决方案。</li>
 </ul>
 </li>
-<li>
-<p><strong><code>solveNQueens</code> 方法：</strong></p>
+<li><p><strong><code>solveNQueens</code> 方法：</strong></p>
 <ul>
 <li>初始化一个数组 <code>queens</code>，其中 <code>queens[i]</code> 表示第 <code>i</code> 行皇后所在的列。</li>
 <li>调用 <code>backtrack</code> 方法从第0行开始探索。</li>
 </ul>
 </li>
-<li>
-<p><strong><code>backtrack</code> 方法：</strong></p>
+<li><p><strong><code>backtrack</code> 方法：</strong></p>
 <ul>
 <li><strong>终止条件：</strong> 如果当前行等于棋盘大小，说明所有皇后已成功放置，添加当前解到 <code>solutions</code>。</li>
-<li><strong>尝试每一列：</strong> 对于当前行，尝试在每一列放置皇后。
-<ul>
+<li><strong>尝试每一列：</strong> 对于当前行，尝试在每一列放置皇后。<ul>
 <li><strong>有效性检查：</strong> 使用 <code>isValid</code> 方法检查当前放置是否安全。</li>
 <li><strong>递归探索：</strong> 如果有效，记录放置位置，并递归探索下一行。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong><code>isValid</code> 方法：</strong></p>
+<li><p><strong><code>isValid</code> 方法：</strong></p>
 <ul>
 <li>检查当前放置的皇后是否与之前的皇后在同一列或同一对角线上。</li>
 </ul>
 </li>
-<li>
-<p><strong><code>generateBoard</code> 方法：</strong></p>
+<li><p><strong><code>generateBoard</code> 方法：</strong></p>
 <ul>
 <li>根据 <code>queens</code> 数组生成棋盘的字符串表示。</li>
 </ul>
 </li>
-<li>
-<p><strong><code>main</code> 方法：</strong></p>
+<li><p><strong><code>main</code> 方法：</strong></p>
 <ul>
 <li>创建 <code>NQueens</code> 实例，调用 <code>solveNQueens</code> 方法获取所有解法，并打印输出。</li>
 </ul>
@@ -506,10 +477,8 @@ public class KnapsackBacktracking {
 
 ...
 </code></pre>
-<h4 id="示例二代码解释：0-1-背包问题">示例二代码解释：0-1 背包问题</h4>
-<ol>
-<li>
-<p><strong>类定义：</strong></p>
+<h4 id="示例二代码解释：0-1-背包问题"><a href="#示例二代码解释：0-1-背包问题" class="headerlink" title="示例二代码解释：0-1 背包问题"></a>示例二代码解释：0-1 背包问题</h4><ol>
+<li><p><strong>类定义：</strong></p>
 <ul>
 <li><code>KnapsackBacktracking</code> 类包含解决0-1背包问题的方法。</li>
 <li><code>maxProfit</code>：记录当前找到的最大价值。</li>
@@ -518,30 +487,25 @@ public class KnapsackBacktracking {
 <li><code>weights</code> 和 <code>values</code>：物品的重量和价值数组。</li>
 </ul>
 </li>
-<li>
-<p><strong><code>solve</code> 方法：</strong></p>
+<li><p><strong><code>solve</code> 方法：</strong></p>
 <ul>
 <li>调用 <code>backtrack</code> 方法从第0个物品开始探索，并返回 <code>maxProfit</code>。</li>
 </ul>
 </li>
-<li>
-<p><strong><code>backtrack</code> 方法：</strong></p>
+<li><p><strong><code>backtrack</code> 方法：</strong></p>
 <ul>
 <li><strong>终止条件：</strong> 如果当前物品索引等于物品数量，检查并更新 <code>maxProfit</code>。</li>
-<li><strong>选择当前物品：</strong>
-<ul>
+<li><strong>选择当前物品：</strong><ul>
 <li>如果当前重量加上物品重量不超过背包容量，选择该物品并递归探索下一个物品。</li>
 </ul>
 </li>
-<li><strong>不选择当前物品：</strong>
-<ul>
+<li><strong>不选择当前物品：</strong><ul>
 <li>直接递归探索下一个物品。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong><code>main</code> 方法：</strong></p>
+<li><p><strong><code>main</code> 方法：</strong></p>
 <ul>
 <li>定义物品的重量和价值，创建 <code>KnapsackBacktracking</code> 实例，调用 <code>solve</code> 方法计算最大价值并打印。</li>
 </ul>
@@ -555,8 +519,7 @@ public class KnapsackBacktracking {
 <li>选择第二个物品（重量20，价值100）和第三个物品（重量30，价值120），总重量50，价值220。</li>
 </ul>
 <hr>
-<h3 id="总结">总结</h3>
-<p><strong>回溯法</strong>是一种通过系统地探索所有可能解并在必要时回退的算法设计策略。它特别适用于需要探索所有可能组合的复杂问题，如八皇后问题、0-1 背包问题和装载问题。回溯法的核心在于：</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>回溯法</strong>是一种通过系统地探索所有可能解并在必要时回退的算法设计策略。它特别适用于需要探索所有可能组合的复杂问题，如八皇后问题、0-1 背包问题和装载问题。回溯法的核心在于：</p>
 <ul>
 <li><strong>系统化搜索：</strong> 通过构建解空间树，逐步尝试构建解。</li>
 <li><strong>剪枝策略：</strong> 在发现当前路径无法产生有效解时，立即停止进一步探索该路径，提升效率。</li>
@@ -564,46 +527,39 @@ public class KnapsackBacktracking {
 </ul>
 <p><strong>学习建议：</strong></p>
 <ol>
-<li>
-<p><strong>理解核心概念：</strong></p>
+<li><p><strong>理解核心概念：</strong></p>
 <ul>
 <li>深入理解回溯法的选择、约束和目标概念。</li>
 <li>学会如何定义和构建解空间树。</li>
 </ul>
 </li>
-<li>
-<p><strong>掌握经典问题：</strong></p>
+<li><p><strong>掌握经典问题：</strong></p>
 <ul>
 <li>通过练习八皇后问题、0-1 背包问题等经典问题，熟悉回溯法的应用。</li>
 </ul>
 </li>
-<li>
-<p><strong>设计有效的剪枝策略：</strong></p>
+<li><p><strong>设计有效的剪枝策略：</strong></p>
 <ul>
 <li>学习如何设计剪枝条件，减少不必要的搜索路径，提高算法效率。</li>
 </ul>
 </li>
-<li>
-<p><strong>编码实现：</strong></p>
+<li><p><strong>编码实现：</strong></p>
 <ul>
 <li>多动手实现回溯法，增强对算法逻辑和细节的理解。</li>
 <li>尝试优化递归实现，减少空间和时间复杂度。</li>
 </ul>
 </li>
-<li>
-<p><strong>分析时间和空间复杂度：</strong></p>
+<li><p><strong>分析时间和空间复杂度：</strong></p>
 <ul>
 <li>理解回溯法在不同问题上的时间和空间复杂度，评估其适用性。</li>
 </ul>
 </li>
-<li>
-<p><strong>比较不同方法：</strong></p>
+<li><p><strong>比较不同方法：</strong></p>
 <ul>
 <li>将回溯法与其他算法（如动态规划、贪心算法、分支限界法）进行比较，了解其优劣势和适用场景。</li>
 </ul>
 </li>
-<li>
-<p><strong>参与讨论和学习社区：</strong></p>
+<li><p><strong>参与讨论和学习社区：</strong></p>
 <ul>
 <li>加入算法学习社区或论坛，参与讨论，分享和获取学习经验。</li>
 </ul>

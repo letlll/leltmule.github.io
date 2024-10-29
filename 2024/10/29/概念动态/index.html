@@ -176,7 +176,7 @@
     </div>
     
     <div class="content" v-pre>
-        <pre><code class="language-mermaid">mindmap
+        <pre><code class="mermaid">mindmap
   root((动态规划))
     核心概念
       重叠子问题
@@ -209,26 +209,22 @@
 </blockquote>
 <p><strong>动态规划</strong>：0-1 背包问题、最长公共子序列。常用于涉及重叠子问题和最优子结构的场景，如 0-1 背包、最长公共子序列等。  <strong>深入解释算法原理</strong>- <strong>理论学习：</strong> 阅读经典教材，如《算法导论》，了解算法的数学基础和设计思想。- <strong>算法推导：</strong> 理解算法的推导过程，为什么这样设计。我也需要你用markdown图表和mermaid 的mindmap分析逻辑，java代码示例以及代码的作用和解释。</p>
 <hr>
-<h3 id="深入理解动态规划">深入理解动态规划</h3>
-<p>动态规划（Dynamic Programming，简称DP）是一种用于解决具有重叠子问题和最优子结构性质的问题的高效算法设计方法。通过将复杂问题分解为更简单的子问题，并保存这些子问题的结果以避免重复计算，动态规划能够显著提高算法的效率。</p>
+<h3 id="深入理解动态规划"><a href="#深入理解动态规划" class="headerlink" title="深入理解动态规划"></a>深入理解动态规划</h3><p>动态规划（Dynamic Programming，简称DP）是一种用于解决具有重叠子问题和最优子结构性质的问题的高效算法设计方法。通过将复杂问题分解为更简单的子问题，并保存这些子问题的结果以避免重复计算，动态规划能够显著提高算法的效率。</p>
 <span id="more"></span>
+
 <hr>
-<h4 id="目录">目录</h4>
-<ol>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ol>
 <li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%A6%82%E8%BF%B0">动态规划概述</a></li>
-<li><a href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86">算法原理</a>
-<ul>
+<li><a href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86">算法原理</a><ul>
 <li><a href="#%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0">理论学习</a></li>
 <li><a href="#%E7%AE%97%E6%B3%95%E6%8E%A8%E5%AF%BC">算法推导</a></li>
 </ul>
 </li>
-<li><a href="#%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90">逻辑分析</a>
-<ul>
+<li><a href="#%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90">逻辑分析</a><ul>
 <li><a href="#%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE">思维导图</a></li>
 </ul>
 </li>
-<li><a href="#Java%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B">Java代码示例</a>
-<ul>
+<li><a href="#Java%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B">Java代码示例</a><ul>
 <li><a href="#%E7%A4%BA%E4%BE%8B%E4%B8%80-0-1-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98">示例一：0-1 背包问题</a></li>
 <li><a href="#%E7%A4%BA%E4%BE%8B%E4%BA%8C-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97lcs">示例二：最长公共子序列（LCS）</a></li>
 </ul>
@@ -237,8 +233,7 @@
 <li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
 </ol>
 <hr>
-<h3 id="动态规划概述">动态规划概述</h3>
-<p><strong>动态规划</strong>是一种通过将问题分解为相互重叠的子问题，并存储其结果以避免重复计算，从而高效解决复杂问题的方法。动态规划通常用于优化问题，尤其是那些可以通过最优子结构来描述的问题。</p>
+<h3 id="动态规划概述"><a href="#动态规划概述" class="headerlink" title="动态规划概述"></a>动态规划概述</h3><p><strong>动态规划</strong>是一种通过将问题分解为相互重叠的子问题，并存储其结果以避免重复计算，从而高效解决复杂问题的方法。动态规划通常用于优化问题，尤其是那些可以通过最优子结构来描述的问题。</p>
 <p><strong>适用场景：</strong></p>
 <ul>
 <li>0-1 背包问题</li>
@@ -254,19 +249,15 @@
 <li><strong>最优子结构（Optimal Substructure）：</strong> 问题的最优解包含其子问题的最优解。</li>
 </ol>
 <hr>
-<h3 id="算法原理">算法原理</h3>
-<h4 id="理论学习">理论学习</h4>
-<p>动态规划的设计基于以下两个主要原则：</p>
+<h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><h4 id="理论学习"><a href="#理论学习" class="headerlink" title="理论学习"></a>理论学习</h4><p>动态规划的设计基于以下两个主要原则：</p>
 <ol>
-<li>
-<p><strong>重叠子问题：</strong></p>
+<li><p><strong>重叠子问题：</strong></p>
 <ul>
 <li>将原问题分解为多个相互重叠的子问题，且这些子问题会被重复计算。</li>
 <li>通过存储子问题的结果（通常使用表格或数组），避免重复计算，提高效率。</li>
 </ul>
 </li>
-<li>
-<p><strong>最优子结构：</strong></p>
+<li><p><strong>最优子结构：</strong></p>
 <ul>
 <li>原问题的最优解可以由其子问题的最优解构建而成。</li>
 <li>这意味着解决子问题的最优解是构建原问题最优解的必要部分。</li>
@@ -281,13 +272,11 @@
 <li><strong>存储中间结果：</strong> 使用记忆化或表格来存储子问题的解，避免重复计算。</li>
 <li><strong>构建最终解：</strong> 从存储的子问题结果中构建原问题的解。</li>
 </ol>
-<h4 id="算法推导">算法推导</h4>
-<p>以<strong>0-1 背包问题</strong>为例，动态规划通过构建一个二维数组 <code>dp[i][w]</code>来表示前 <code>i</code>个物品在重量不超过 <code>w</code>的情况下能够获得的最大价值。</p>
+<h4 id="算法推导"><a href="#算法推导" class="headerlink" title="算法推导"></a>算法推导</h4><p>以<strong>0-1 背包问题</strong>为例，动态规划通过构建一个二维数组 <code>dp[i][w]</code>来表示前 <code>i</code>个物品在重量不超过 <code>w</code>的情况下能够获得的最大价值。</p>
 <p><strong>推导过程：</strong></p>
 <ul>
 <li><strong>状态定义：</strong> <code>dp[i][w]</code>表示前 <code>i</code>个物品，容量不超过 <code>w</code>时的最大价值。</li>
-<li><strong>状态转移方程：</strong>
-<ul>
+<li><strong>状态转移方程：</strong><ul>
 <li>如果第 <code>i</code>个物品重量大于 <code>w</code>，则不能选择该物品：<pre><code>dp[i][w] = dp[i-1][w]
 </code></pre>
 </li>
@@ -300,10 +289,8 @@
 </ul>
 <p>这种方法确保了通过解决所有子问题来构建原问题的最优解。</p>
 <hr>
-<h3 id="Java代码示例">Java代码示例</h3>
-<h4 id="示例一：0-1-背包问题">示例一：0-1 背包问题</h4>
-<p>0-1 背包问题要求在不超过背包容量的情况下，选择物品使得总价值最大。每个物品只能选择一次。</p>
-<pre><code class="language-java">public class Knapsack01 {
+<h3 id="Java代码示例"><a href="#Java代码示例" class="headerlink" title="Java代码示例"></a>Java代码示例</h3><h4 id="示例一：0-1-背包问题"><a href="#示例一：0-1-背包问题" class="headerlink" title="示例一：0-1 背包问题"></a>示例一：0-1 背包问题</h4><p>0-1 背包问题要求在不超过背包容量的情况下，选择物品使得总价值最大。每个物品只能选择一次。</p>
+<pre><code class="java">public class Knapsack01 {
     // 方法：0-1 背包问题的动态规划解法
     public static int knapsack(int W, int[] weights, int[] values, int n) {
         // 创建二维DP数组
@@ -336,9 +323,8 @@
     }
 }
 </code></pre>
-<h4 id="示例二：最长公共子序列（LCS）">示例二：最长公共子序列（LCS）</h4>
-<p>最长公共子序列问题旨在找到两个序列中最长的公共子序列，其元素在两个序列中保持相对顺序。</p>
-<pre><code class="language-java">public class LongestCommonSubsequence {
+<h4 id="示例二：最长公共子序列（LCS）"><a href="#示例二：最长公共子序列（LCS）" class="headerlink" title="示例二：最长公共子序列（LCS）"></a>示例二：最长公共子序列（LCS）</h4><p>最长公共子序列问题旨在找到两个序列中最长的公共子序列，其元素在两个序列中保持相对顺序。</p>
+<pre><code class="java">public class LongestCommonSubsequence {
     // 方法：计算两个字符串的最长公共子序列长度
     public static int lcs(String X, String Y, int m, int n) {
         // 创建二维DP数组
@@ -372,14 +358,10 @@
 }
 </code></pre>
 <hr>
-<h3 id="代码解释">代码解释</h3>
-<h4 id="示例一：0-1-背包问题-2">示例一：0-1 背包问题</h4>
-<ol>
-<li>
-<p><strong>函数定义：</strong></p>
+<h3 id="代码解释"><a href="#代码解释" class="headerlink" title="代码解释"></a>代码解释</h3><h4 id="示例一：0-1-背包问题-1"><a href="#示例一：0-1-背包问题-1" class="headerlink" title="示例一：0-1 背包问题"></a>示例一：0-1 背包问题</h4><ol>
+<li><p><strong>函数定义：</strong></p>
 <ul>
-<li><code>knapsack(int W, int[] weights, int[] values, int n)</code>：
-<ul>
+<li><code>knapsack(int W, int[] weights, int[] values, int n)</code>：<ul>
 <li><code>W</code>：背包的最大容量。</li>
 <li><code>weights</code>：物品的重量数组。</li>
 <li><code>values</code>：物品的价值数组。</li>
@@ -388,20 +370,16 @@
 </li>
 </ul>
 </li>
-<li>
-<p><strong>DP数组构建：</strong></p>
+<li><p><strong>DP数组构建：</strong></p>
 <ul>
 <li>创建一个二维数组 <code>dp[n+1][W+1]</code>，其中 <code>dp[i][w]</code>表示前 <code>i</code>个物品在容量不超过 <code>w</code>时的最大价值。</li>
 </ul>
 </li>
-<li>
-<p><strong>填充DP表：</strong></p>
+<li><p><strong>填充DP表：</strong></p>
 <ul>
 <li><strong>初始化：</strong> 当 <code>i</code>或 <code>w</code>为0时，<code>dp[i][w]</code>为0。</li>
-<li><strong>选择或不选择物品：</strong>
-<ul>
-<li>如果当前物品的重量小于等于 <code>w</code>，则有两种选择：
-<ul>
+<li><strong>选择或不选择物品：</strong><ul>
+<li>如果当前物品的重量小于等于 <code>w</code>，则有两种选择：<ul>
 <li>选择该物品：价值为 <code>values[i-1] + dp[i-1][w - weights[i-1]]</code></li>
 <li>不选择该物品：价值为 <code>dp[i-1][w]</code></li>
 </ul>
@@ -412,8 +390,7 @@
 <li><strong>否则：</strong> 不能选择该物品，<code>dp[i][w] = dp[i-1][w]</code>。</li>
 </ul>
 </li>
-<li>
-<p><strong>最终结果：</strong> <code>dp[n][W]</code>即为最大价值。</p>
+<li><p><strong>最终结果：</strong> <code>dp[n][W]</code>即为最大价值。</p>
 </li>
 </ol>
 <p><strong>运行结果：</strong></p>
@@ -423,43 +400,35 @@
 <ul>
 <li>选择第二个物品（重量20，价值100）和第三个物品（重量30，价值120），总重量50，价值220。</li>
 </ul>
-<h4 id="示例二：最长公共子序列（LCS）-2">示例二：最长公共子序列（LCS）</h4>
-<ol>
-<li>
-<p><strong>函数定义：</strong></p>
+<h4 id="示例二：最长公共子序列（LCS）-1"><a href="#示例二：最长公共子序列（LCS）-1" class="headerlink" title="示例二：最长公共子序列（LCS）"></a>示例二：最长公共子序列（LCS）</h4><ol>
+<li><p><strong>函数定义：</strong></p>
 <ul>
-<li><code>lcs(String X, String Y, int m, int n)</code>：
-<ul>
+<li><code>lcs(String X, String Y, int m, int n)</code>：<ul>
 <li><code>X</code>和 <code>Y</code>：需要比较的两个字符串。</li>
 <li><code>m</code>和 <code>n</code>：分别为字符串 <code>X</code>和 <code>Y</code>的长度。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>DP数组构建：</strong></p>
+<li><p><strong>DP数组构建：</strong></p>
 <ul>
 <li>创建一个二维数组 <code>dp[m+1][n+1]</code>，其中 <code>dp[i][j]</code>表示 <code>X</code>的前 <code>i</code>个字符和 <code>Y</code>的前 <code>j</code>个字符的最长公共子序列长度。</li>
 </ul>
 </li>
-<li>
-<p><strong>填充DP表：</strong></p>
+<li><p><strong>填充DP表：</strong></p>
 <ul>
 <li><strong>初始化：</strong> 当 <code>i</code>或 <code>j</code>为0时，<code>dp[i][j]</code>为0。</li>
-<li><strong>字符匹配：</strong>
-<ul>
+<li><strong>字符匹配：</strong><ul>
 <li>如果 <code>X.charAt(i-1) == Y.charAt(j-1)</code>，则 <code>dp[i][j] = dp[i-1][j-1] + 1</code>。</li>
 </ul>
 </li>
-<li><strong>字符不匹配：</strong>
-<ul>
+<li><strong>字符不匹配：</strong><ul>
 <li><code>dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1])</code>。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>最终结果：</strong> <code>dp[m][n]</code>即为最长公共子序列的长度。</p>
+<li><p><strong>最终结果：</strong> <code>dp[m][n]</code>即为最长公共子序列的长度。</p>
 </li>
 </ol>
 <p><strong>运行结果：</strong></p>
@@ -470,54 +439,45 @@
 <li>字符串 <code>"AGGTAB"</code>和 <code>"GXTXAYB"</code>的最长公共子序列是 <code>"GTAB"</code>，长度为4。</li>
 </ul>
 <hr>
-<h3 id="总结">总结</h3>
-<p><strong>动态规划</strong>是一种强大的算法设计方法，适用于具有<strong>重叠子问题</strong>和<strong>最优子结构</strong>性质的复杂问题。通过系统地分解问题、构建递推关系并存储中间结果，动态规划能够高效地找到最优解。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>动态规划</strong>是一种强大的算法设计方法，适用于具有<strong>重叠子问题</strong>和<strong>最优子结构</strong>性质的复杂问题。通过系统地分解问题、构建递推关系并存储中间结果，动态规划能够高效地找到最优解。</p>
 <p><strong>学习建议：</strong></p>
 <ol>
-<li>
-<p><strong>理解核心概念：</strong></p>
+<li><p><strong>理解核心概念：</strong></p>
 <ul>
 <li>深入理解重叠子问题和最优子结构的定义及其在具体问题中的体现。</li>
 </ul>
 </li>
-<li>
-<p><strong>掌握常见问题：</strong></p>
+<li><p><strong>掌握常见问题：</strong></p>
 <ul>
 <li>通过练习0-1 背包问题、最长公共子序列、最短路径等经典问题，熟悉动态规划的应用。</li>
 </ul>
 </li>
-<li>
-<p><strong>练习状态定义和转移方程：</strong></p>
+<li><p><strong>练习状态定义和转移方程：</strong></p>
 <ul>
 <li>学会如何为不同问题定义合适的状态，以及如何推导状态转移方程。</li>
 </ul>
 </li>
-<li>
-<p><strong>优化空间复杂度：</strong></p>
+<li><p><strong>优化空间复杂度：</strong></p>
 <ul>
 <li>学习如何通过滚动数组等方法优化动态规划的空间使用。</li>
 </ul>
 </li>
-<li>
-<p><strong>编码实现：</strong></p>
+<li><p><strong>编码实现：</strong></p>
 <ul>
 <li>多动手实现动态规划算法，增强对算法逻辑的理解。</li>
 </ul>
 </li>
-<li>
-<p><strong>分析时间和空间复杂度：</strong></p>
+<li><p><strong>分析时间和空间复杂度：</strong></p>
 <ul>
 <li>理解动态规划算法的时间和空间复杂度，评估其在不同场景下的适用性。</li>
 </ul>
 </li>
-<li>
-<p><strong>比较不同方法：</strong></p>
+<li><p><strong>比较不同方法：</strong></p>
 <ul>
 <li>将动态规划与其他算法（如回溯法、贪心算法）进行比较，了解其优劣势和适用场景。</li>
 </ul>
 </li>
-<li>
-<p><strong>参与讨论和学习社区：</strong></p>
+<li><p><strong>参与讨论和学习社区：</strong></p>
 <ul>
 <li>加入算法学习社区或论坛，参与讨论，分享和获取学习经验。</li>
 </ul>
