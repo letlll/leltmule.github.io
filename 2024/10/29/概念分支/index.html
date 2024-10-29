@@ -61,7 +61,7 @@
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载迟缓 宜启浏览器缓存</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -591,6 +591,7 @@ public class TSPBranchAndBound {
     
     
 </div>
+
             <footer id="footer">
     <div id="footer-wrap">
         <div>
@@ -621,39 +622,27 @@ public class TSPBranchAndBound {
     <script src="/js/main.js"></script>
     
     
-    
-
- 
-    
 
 
-    
-        <!-- 引入 Waline 的样式文件 -->
-        <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-        <div id="comment">
-            <div id="waline-container"></div>
-        </div>
-    
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://blog.letlmule.fun/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
 
-    
-        <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-        <script>
-            Waline.init({
-                el: '#waline-container',
-                serverURL: "https://blog.letlmule.fun/",
-                commentCount: "true",
-                pageview: "false",
-                emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(','),
-                meta: "nick,mail,link".split(','),
-                requiredMeta: "nick".split(','),
-                lang: "zh-CN",
-                wordLimit: parseInt("0"),
-                pageSize: "10",
-                login: "enable",
-            });
-        </script>
-    
-    
+
+
     
 </body>
 </html>

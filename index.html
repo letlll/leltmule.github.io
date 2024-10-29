@@ -55,7 +55,7 @@
             <div id="loading" v-show="loading">
                 <div id="loading-circle">
                     <h2>LOADING</h2>
-                    <p>加载迟缓 宜启浏览器缓存</p>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
                     <img src="/images/loading.gif" />
                 </div>
             </div>
@@ -224,8 +224,8 @@
 </div>
 
 <div class="post">
-    <a href="/2024/10/29/%E5%9B%9E%E6%BA%AF%E6%B3%95/">
-        <h2 class="post-title">回溯法</h2>
+    <a href="/2024/10/29/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+        <h2 class="post-title">动态规划</h2>
     </a>
     <div class="category-and-date">
         
@@ -245,19 +245,13 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1>回溯简介【自用】</h1>
-<p>回溯就像尝试不同的路径，当你走到死胡同时，你会回到最后一个选择并尝试不同的路线。在本文中，我们将探讨回溯的基础知识、它是如何工作的，以及它如何帮助解决各种具有挑战性的问题。这就像一种在复杂的选择中找到正确方法的方法。</p>
-<p>目录</p>
+            <h2 id="动态规划【自用】"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-dynamic-programming-data-structures-and-algorithm-tutorials/">动态规划</a>【自用】</h2>
+<p>动态规划是数学和计算机科学中使用的一种方法，通过将复杂问题分解为更简单的子问题来解决这些问题。通过仅求解每个子问题一次并存储结果，它避免了冗余计算，从而为各种问题提供了更高效的解决方案。</p>
+<p>关键概念：</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#what-is-backtracking">什么是回溯？</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#types-of-backtracking-problems">回溯问题的类型</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#how-does-backtracking-works">回溯是如何工作的？</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#determining-backtracking-problems">确定回溯问题</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#pseudocode-for-backtracking">回溯伪代码</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#complexity-analysis-of-backtracking">回溯的复杂性分析</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#how-backtracking-is-different-from-recursion">回溯与递归有何不同？</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#applications-of-backtracking">回溯的应用</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#must-do-backtracking-problems">必须做的回溯问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/optimal-substructure-property-in-dynamic-programming-dp-2/">最优子结构</a>：问题的最优解可以从其子问题的最优解中构建。</li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/">重叠的子问题</a>：子问题通常在较大的问题中重复出现，从而导致冗余计算。</li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/what-is-memoization-a-complete-tutorial/">Memoization</a>&nbsp;/&nbsp;<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/tabulation-vs-memoization/">Tabulation</a>：存储子问题的解决方案以避免重新计算。</li>
 </ul>
             
         </div>
@@ -267,7 +261,7 @@
         
         
     </div>
-    <a href="/2024/10/29/%E5%9B%9E%E6%BA%AF%E6%B3%95/" class="go-post">阅读全文</a>
+    <a href="/2024/10/29/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -434,47 +428,6 @@
 </div>
 
 <div class="post">
-    <a href="/2024/10/29/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-        <h2 class="post-title">动态规划</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/10/29
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="动态规划【自用】"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-dynamic-programming-data-structures-and-algorithm-tutorials/">动态规划</a>【自用】</h2>
-<p>动态规划是数学和计算机科学中使用的一种方法，通过将复杂问题分解为更简单的子问题来解决这些问题。通过仅求解每个子问题一次并存储结果，它避免了冗余计算，从而为各种问题提供了更高效的解决方案。</p>
-<p>关键概念：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/optimal-substructure-property-in-dynamic-programming-dp-2/">最优子结构</a>：问题的最优解可以从其子问题的最优解中构建。</li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/">重叠的子问题</a>：子问题通常在较大的问题中重复出现，从而导致冗余计算。</li>
-<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/what-is-memoization-a-complete-tutorial/">Memoization</a>&nbsp;/&nbsp;<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/tabulation-vs-memoization/">Tabulation</a>：存储子问题的解决方案以避免重新计算。</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/10/29/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E5%8A%A8%E6%80%81/">
         <h2 class="post-title">概念动态</h2>
     </a>
@@ -540,6 +493,53 @@
         
     </div>
     <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E5%8A%A8%E6%80%81/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2024/10/29/%E5%9B%9E%E6%BA%AF%E6%B3%95/">
+        <h2 class="post-title">回溯法</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/29
+        </span>
+        
+        
+        <span class="special">
+            <i class="fa-solid fa-grip-vertical fa-fw"></i>
+        </span>
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1>回溯简介【自用】</h1>
+<p>回溯就像尝试不同的路径，当你走到死胡同时，你会回到最后一个选择并尝试不同的路线。在本文中，我们将探讨回溯的基础知识、它是如何工作的，以及它如何帮助解决各种具有挑战性的问题。这就像一种在复杂的选择中找到正确方法的方法。</p>
+<p>目录</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#what-is-backtracking">什么是回溯？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#types-of-backtracking-problems">回溯问题的类型</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#how-does-backtracking-works">回溯是如何工作的？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#determining-backtracking-problems">确定回溯问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#pseudocode-for-backtracking">回溯伪代码</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#complexity-analysis-of-backtracking">回溯的复杂性分析</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#how-backtracking-is-different-from-recursion">回溯与递归有何不同？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#applications-of-backtracking">回溯的应用</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#must-do-backtracking-problems">必须做的回溯问题</a></li>
+</ul>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2024/10/29/%E5%9B%9E%E6%BA%AF%E6%B3%95/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -614,6 +614,68 @@
 </div>
 
 <div class="post">
+    <a href="/2024/10/29/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
+        <h2 class="post-title">贪心算法</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/10/29
+        </span>
+        
+        
+        <span class="special">
+            <i class="fa-solid fa-grip-vertical fa-fw"></i>
+        </span>
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="贪心算法【自用】"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-greedy-algorithm-data-structures-and-algorithm-tutorials/">贪心算法</a>【自用】</h2>
+<p>顾名思义，该算法一次构建一个解决方案，然后选择下一个提供最明显和直接好处的部分，即，这是当时最优化的选择。因此，选择局部最优也会导致全局解的问题最适合 Greedy。</p>
+<p>贪心算法的一些重要问题是：</p>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/fractional-knapsack-problem/">部分背包</a></td>
+<td>查找可以放入背包中的物品的最大总价值，允许部分包含物品。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/">Dijkstra 算法</a></td>
+<td>查找从源顶点到加权图中所有其他顶点的最短路径。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/">Kruskal 算法</a></td>
+<td>查找加权图的最小跨度树。</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/">哈夫曼编码</a></td>
+<td>为一组符号创建最佳前缀代码，从而最小化总编码长度。</td>
+</tr>
+</tbody>
+</table>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+        
+    </div>
+    <a href="/2024/10/29/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E8%B4%AA%E5%BF%83/">
         <h2 class="post-title">概念贪心</h2>
     </a>
@@ -680,68 +742,6 @@
         
     </div>
     <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E8%B4%AA%E5%BF%83/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/10/29/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
-        <h2 class="post-title">贪心算法</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/10/29
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="贪心算法【自用】"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-greedy-algorithm-data-structures-and-algorithm-tutorials/">贪心算法</a>【自用】</h2>
-<p>顾名思义，该算法一次构建一个解决方案，然后选择下一个提供最明显和直接好处的部分，即，这是当时最优化的选择。因此，选择局部最优也会导致全局解的问题最适合 Greedy。</p>
-<p>贪心算法的一些重要问题是：</p>
-<table>
-<thead>
-<tr>
-<th>算法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/fractional-knapsack-problem/">部分背包</a></td>
-<td>查找可以放入背包中的物品的最大总价值，允许部分包含物品。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/">Dijkstra 算法</a></td>
-<td>查找从源顶点到加权图中所有其他顶点的最短路径。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/">Kruskal 算法</a></td>
-<td>查找加权图的最小跨度树。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/">哈夫曼编码</a></td>
-<td>为一组符号创建最佳前缀代码，从而最小化总编码长度。</td>
-</tr>
-</tbody>
-</table>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/10/29/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">

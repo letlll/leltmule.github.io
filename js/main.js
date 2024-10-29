@@ -14,17 +14,10 @@ const app = Vue.createApp({
         window.addEventListener("load", () => {
             this.loading = false;
         });
-        const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js';
-    script.onload = () => {
-        mermaid.initialize({ startOnLoad: true });
-    };
-    document.head.appendChild(script);
-    this.renderers.push(this.highlight);
     },
     mounted() {
         window.addEventListener("scroll", this.handleScroll, true);
-        // this.render();
+        this.render();
     },
     methods: {
         render() {
