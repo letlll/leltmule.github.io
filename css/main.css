@@ -4,7 +4,7 @@
     padding: 20px;
 }
 .code-content {
-    white-space:pre-wrap;
+    white-space: pre-wrap; /* 保证代码块可以换行 */
 }
 #archives .categories-tags {
     margin: auto;

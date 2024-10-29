@@ -3,7 +3,9 @@ mixins.highlight = {
         return { copying: false };
     },
     created() {
-        hljs.configure({ ignoreUnescapedHTML: true });
+        hljs.configure({ ignoreUnescapedHTML: true , 
+            useBR: true // 启用换行
+             });
         this.renderers.push(this.highlight);
     },
     methods: {
