@@ -1,15 +1,15 @@
 const app = Vue.createApp({
     mixins: Object.values(mixins),
-    // data() {
-    //     return {
-    //         loading: true,
-    //         hiddenMenu: false,
-    //         showMenuItems: false,
-    //         menuColor: false,
-    //         scrollTop: 0,
-    //         renderers: [],
-    //     };
-    // },
+    data() {
+        return {
+            loading: true,
+            hiddenMenu: false,
+            showMenuItems: false,
+            menuColor: false,
+            scrollTop: 0,
+            renderers: [],
+        };
+    },
     created() {
         window.addEventListener("load", () => {
             this.loading = false;

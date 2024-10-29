@@ -490,7 +490,7 @@
     line-height: 2;
     overflow: auto;
     padding: 50px 30px 20px;
-    white-space: pre;
+    white-space: pre-wrap; /* 保留换行 */
 }
 .comment iframe,
 body::-webkit-scrollbar-track {
@@ -774,7 +774,7 @@ pre {
     box-shadow: 0 2px 12px 0 #0000001a;
     margin: 25px 0;
     overflow: hidden;
-    white-space: normal;
+    white-space: pre-wrap; /* 保留换行 */
 }
 pre,
 code,
