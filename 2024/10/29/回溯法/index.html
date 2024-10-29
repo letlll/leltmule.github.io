@@ -176,8 +176,7 @@
     </div>
     
     <div class="content" v-pre>
-        <h1>回溯简介【自用】</h1>
-<p>回溯就像尝试不同的路径，当你走到死胡同时，你会回到最后一个选择并尝试不同的路线。在本文中，我们将探讨回溯的基础知识、它是如何工作的，以及它如何帮助解决各种具有挑战性的问题。这就像一种在复杂的选择中找到正确方法的方法。</p>
+        <h1 id="回溯简介【自用】"><a href="#回溯简介【自用】" class="headerlink" title="回溯简介【自用】"></a>回溯简介【自用】</h1><p>回溯就像尝试不同的路径，当你走到死胡同时，你会回到最后一个选择并尝试不同的路线。在本文中，我们将探讨回溯的基础知识、它是如何工作的，以及它如何帮助解决各种具有挑战性的问题。这就像一种在复杂的选择中找到正确方法的方法。</p>
 <p>目录</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#what-is-backtracking">什么是回溯？</a></li>
@@ -190,14 +189,14 @@
 <li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#applications-of-backtracking">回溯的应用</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-backtracking-2/?ref=header_outind#must-do-backtracking-problems">必须做的回溯问题</a></li>
 </ul>
-<h2 id="什么是回溯？">什么是回溯？</h2>
-<p>回溯是一种解决问题的算法技术，它涉及通过尝试不同的选项逐步找到解决方案，如果&nbsp;它们导致死胡同，则撤消它们。它通常用于您需要探索多种可能性来解决问题的情况，例如在迷宫中寻找路径或解决数独等谜题。当到达死胡同时，算法会回溯到前一个决策点并探索不同的路径，直到找到解决方案或用尽所有可能性。</p>
+<span id="more"></span>
+
+<h2 id="什么是回溯？"><a href="#什么是回溯？" class="headerlink" title="什么是回溯？"></a>什么是回溯？</h2><p>回溯是一种解决问题的算法技术，它涉及通过尝试不同的选项逐步找到解决方案，如果&nbsp;它们导致死胡同，则撤消它们。它通常用于您需要探索多种可能性来解决问题的情况，例如在迷宫中寻找路径或解决数独等谜题。当到达死胡同时，算法会回溯到前一个决策点并探索不同的路径，直到找到解决方案或用尽所有可能性。</p>
 <blockquote>
 <p>回溯可以定义为一种通用的算法技术，它考虑搜索所有可能的组合以解决计算问题。</p>
 </blockquote>
 <p>回溯简介</p>
-<h3 id="基本术语">基本术语</h3>
-<ul>
+<h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3><ul>
 <li>候选项：候选项是可以添加到当前解决方案中的潜在选项或元素。</li>
 <li>解决方案：该解决方案是满足所有问题约束的有效且完整的配置。</li>
 <li>部分解决方案：部分解决方案是在回溯过程中构建的中间或不完全配置。</li>
@@ -209,27 +208,22 @@
 <li>搜索空间：搜索空间包括候选项和选项的所有可能组合。</li>
 <li>最优解：在优化问题中，最优解就是可能的最佳解。</li>
 </ul>
-<h2 id="回溯问题的类型">回溯问题的类型</h2>
-<p>与回溯相关的问题可分为 3 类：</p>
+<h2 id="回溯问题的类型"><a href="#回溯问题的类型" class="headerlink" title="回溯问题的类型"></a>回溯问题的类型</h2><p>与回溯相关的问题可分为 3 类：</p>
 <ul>
 <li>决策问题：&nbsp;在这里，我们寻找可行的解决方案。</li>
 <li>优化问题：对于此类型，我们寻找最佳解决方案。</li>
 <li>枚举问题：&nbsp;我们为此类问题找到了所有可能的可行解决方案。</li>
 </ul>
-<h2 id="回溯是如何工作的？">回溯是如何工作的？</h2>
-<blockquote>
+<h2 id="回溯是如何工作的？"><a href="#回溯是如何工作的？" class="headerlink" title="回溯是如何工作的？"></a>回溯是如何工作的？</h2><blockquote>
 <p>正如我们所知，回溯算法会探索每一条可能的路径以找到有效的解决方案，这种路径的探索可以通过给定的图像轻松理解：</p>
-<p>如图所示，“IS” 表示 递归调用开始查找有效解决方案的初始状态。<br>
-C ：它表示递归调用的不同 Checkpoint</p>
+<p>如图所示，“IS” 表示 递归调用开始查找有效解决方案的初始状态。<br>C ：它表示递归调用的不同 Checkpoint</p>
 <p>TN：它表示无法进行进一步递归调用的终端节点，这些节点充当递归的基本情况，我们确定当前解决方案在此状态下是否有效。</p>
 <p>在每个 Checkpoint 上，我们的程序都会做出一些决定并移动到其他 checkpoint，直到到达终端节点，在确定解决方案是否有效后，程序开始返回到 checkpoint 并尝试探索其他路径。例如，在上图中，TN1…TN5 是解决方案不可接受的终端节点，而 TN6 是我们找到有效解决方案的状态。</p>
 <p>图像中的后退箭头显示了操作中的回溯，其中我们还原了某个检查点所做的更改。</p>
 </blockquote>
-<h2 id="确定回溯问题：">确定回溯问题：</h2>
-<p>通常，每个约束满足问题都可以使用回溯来解决，但是，每次都使用回溯是最好的吗？事实证明没有，有大量问题可以使用对数或多项式时间复杂度的<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-greedy-algorithm-data-structures-and-algorithm-tutorials/">贪婪</a><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/dynamic-programming/">或动态规划</a>来解决，这比回溯的指数复杂度要好得多。然而，仍然存在许多问题，只能使用 Backtracking 来解决。</p>
+<h2 id="确定回溯问题："><a href="#确定回溯问题：" class="headerlink" title="确定回溯问题："></a>确定回溯问题：</h2><p>通常，每个约束满足问题都可以使用回溯来解决，但是，每次都使用回溯是最好的吗？事实证明没有，有大量问题可以使用对数或多项式时间复杂度的<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-greedy-algorithm-data-structures-and-algorithm-tutorials/">贪婪</a><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/dynamic-programming/">或动态规划</a>来解决，这比回溯的指数复杂度要好得多。然而，仍然存在许多问题，只能使用 Backtracking 来解决。</p>
 <blockquote>
-<p>要了解一个问题是否是基于回溯的，让我们看一个简单的问题：<br>
-问题：假设你有 3 个封闭的盒子，其中 2 个是空的，1 个是金币。你的任务是获得金币。</p>
+<p>要了解一个问题是否是基于回溯的，让我们看一个简单的问题：<br>问题：假设你有 3 个封闭的盒子，其中 2 个是空的，1 个是金币。你的任务是获得金币。</p>
 <p>为什么动态规划无法解决这个问题：Does 打开或关闭一个盒子对另一个盒子有什么影响？结果是否定的，每个盒子都是彼此独立的，一个盒子的打开/关闭状态无法确定其他盒子的过渡。因此 DP 失败。</p>
 <p>为什么贪婪无法解决这个问题：贪婪算法选择一个局部最大值以获得全局最大值，但是在这个问题中，每个盒子都有相等的金币概率，即 1/3，因此没有做出贪婪选择的标准。</p>
 <p>为什么回溯有效： 如前所述，回溯算法只是蛮力强制每一个选择，因此我们可以一个一个地选择每个盒子来找到金币，如果发现一个盒子是空的，我们可以将其关闭，这充当回溯步骤。</p>
@@ -237,8 +231,7 @@ C ：它表示递归调用的不同 Checkpoint</p>
 <ul>
 <li>该算法通过探索问题中的选择创建的所有可能路径来构建解决方案，此解决方案以空集 S={} 开头</li>
 <li>每个选择都会创建一个新的子树 ‘s’，我们将其添加到 are set 中。</li>
-<li>现在有两种情况：
-<ul>
+<li>现在有两种情况：<ul>
 <li>S+s 是有效集</li>
 <li>S+s 设置无效</li>
 </ul>
@@ -246,8 +239,7 @@ C ：它表示递归调用的不同 Checkpoint</p>
 <li>如果集合有效，那么我们进一步做出选择并重复该过程，直到找到解决方案，否则我们撤回包含 ‘s’ 的决定并探索其他路径，直到找到解决方案或用尽所有可能的路径。</li>
 </ul>
 </blockquote>
-<h2 id="回溯伪代码">回溯伪代码</h2>
-<p>实现回溯的最佳方法是通过递归，所有回溯代码都可以根据给定的伪代码进行总结：</p>
+<h2 id="回溯伪代码"><a href="#回溯伪代码" class="headerlink" title="回溯伪代码"></a>回溯伪代码</h2><p>实现回溯的最佳方法是通过递归，所有回溯代码都可以根据给定的伪代码进行总结：</p>
 <blockquote>
 <p>void FIND_SOLUTIONS（ 参数）：</p>
 <p>if （有效解）：</p>
@@ -260,15 +252,13 @@ C ：它表示递归调用的不同 Checkpoint</p>
 <p>BACKTRACK （删除选项)</p>
 <p>返回</p>
 </blockquote>
-<h2 id="回溯的复杂性分析">回溯的复杂性分析</h2>
-<p>由于回溯算法是纯粹的蛮力，因此在时间复杂度方面，它的表现非常糟糕。通常，回溯可以看作具有以下提到的时间复杂性：</p>
+<h2 id="回溯的复杂性分析"><a href="#回溯的复杂性分析" class="headerlink" title="回溯的复杂性分析"></a>回溯的复杂性分析</h2><p>由于回溯算法是纯粹的蛮力，因此在时间复杂度方面，它的表现非常糟糕。通常，回溯可以看作具有以下提到的时间复杂性：</p>
 <ul>
 <li>指数 （O（K^N））</li>
 <li>阶乘 （O（N！））</li>
 </ul>
 <p>这些复杂性是由于这样一个事实：在每种状态下，我们都有多个选择，因此路径的数量会增加，子树会迅速扩展。</p>
-<h2 id="回溯与递归有何不同？">回溯与递归有何不同？</h2>
-<p>递归和回溯是计算机科学和编程中的相关概念，但它们不是一回事。让我们探讨一下它们之间的主要区别：</p>
+<h2 id="回溯与递归有何不同？"><a href="#回溯与递归有何不同？" class="headerlink" title="回溯与递归有何不同？"></a>回溯与递归有何不同？</h2><p>递归和回溯是计算机科学和编程中的相关概念，但它们不是一回事。让我们探讨一下它们之间的主要区别：</p>
 <table>
 <thead>
 <tr>
@@ -276,8 +266,7 @@ C ：它表示递归调用的不同 Checkpoint</p>
 <th>回溯</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>递归并不总是需要回溯</td>
 <td>回溯始终使用递归来解决问题</td>
 </tr>
@@ -293,18 +282,15 @@ C ：它表示递归调用的不同 Checkpoint</p>
 <td><strong>递归的应用</strong>：树和图遍历、河内塔、分而治之算法、归并排序、快速排序和二进制搜索。</td>
 <td><strong>回溯的应用</strong>：N Queen 问题、迷宫中的老鼠问题、Knight’s Tour 问题、数独求解器和图形着色问题。</td>
 </tr>
-</tbody>
-</table>
-<h2 id="回溯的应用">回溯的应用</h2>
-<ul>
+</tbody></table>
+<h2 id="回溯的应用"><a href="#回溯的应用" class="headerlink" title="回溯的应用"></a>回溯的应用</h2><ul>
 <li>创建智能机器人来玩棋盘游戏，例如国际象棋。</li>
 <li>解决迷宫和谜题，例如 N-Queen 问题。</li>
 <li>网络路由和拥塞控制。</li>
 <li>解密</li>
 <li>文本对齐</li>
 </ul>
-<h2 id="必须做的回溯问题">必须做的回溯问题</h2>
-<ul>
+<h2 id="必须做的回溯问题"><a href="#必须做的回溯问题" class="headerlink" title="必须做的回溯问题"></a>必须做的回溯问题</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/">N-Queen 问题</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/sudoku-backtracking-7/">解决数独</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/m-coloring-problem/">M 着色问题</a></li>
@@ -320,8 +306,7 @@ C ：它表示递归调用的不同 Checkpoint</p>
 <th>Link</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>0-1 背包问题</td>
 <td>✅</td>
 <td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/printing-items-01-knapsack/?ref=header_outind">0-1 Knapsack Problem</a>【图文】</td>
@@ -376,8 +361,7 @@ C ：它表示递归调用的不同 Checkpoint</p>
 <td>❌</td>
 <td></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 
     </div>
     
