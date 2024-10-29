@@ -3,7 +3,7 @@
 <html lang="CN">
 <head>
     <meta charset="utf-8" />
-    <title>修缮报告 | LetlMule</title>
+    <title> | LetlMule</title>
     <meta name="author" content="Zooooa" />
     <meta name="description" content="Zooooa" />
     <meta name="keywords" content="Letl, Mule, Zooooa, letl, mule, zooooa, LETL, MULE, ZOOOOA" />
@@ -162,49 +162,110 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>修缮报告</h1>
+        <h1></h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/8/13
+            2024/10/29
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <h1>修缮</h1>
+        <h1>分支和限界法【自用】</h1>
+<p><strong>Branch and Bound Algorithm</strong>&nbsp;是组合优化问题中使用的一种方法&nbsp;，用于系统地搜索最佳解决方案。它的工作原理是将问题划分为更小的子问题或分支，然后根据最佳解决方案的边界消除某些分支。此过程一直持续，直到找到最佳解决方案或探索了所有分支。<strong>分支和限界法</strong>&nbsp;通常用于旅行推销员和作业调度等问题。</p>
+<h2 id="分支和限界法-简介：">分支和限界法 简介：</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/branch-and-bound-meaning-in-dsa/">DSA 中的 分支和限界法 含义</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/introduction-to-branch-and-bound-data-structures-and-algorithms-tutorial/">分支和限界法 简介</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/difference-between-backtracking-and-branch-n-bound-technique/">回溯和 Branch-N-Bound 之间的区别</a></li>
+</ul>
+<h2 id="分支和限界法-上的标准问题：">分支和限界法 上的标准问题：</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/branch-and-bound-set-1-introduction-with-01-knapsack/">分支和限界法 |第 1 组（0/1 背包介绍）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/branch-and-bound-set-2-implementation-of-01-knapsack/">分支和限界法 |第 2 组（实现 0/1 背包）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/0-1-knapsack-using-least-count-branch-and-bound/">使用 Least Cost 分支和限界法 的 0/1 背包</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/branch-bound-set-3-8-puzzle-problem/" title="Permalink to Branch and Bound | Set 3 (8 puzzle Problem)">分支和限界法 |第 3 组 （8 个谜题）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/branch-and-bound-set-4-n-queen-problem/" title="Permalink to Branch and Bound | Set 5 (N Queen Problem)">分支和限界法 |第 5 组（N Queen 问题）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/branch-bound-set-5-traveling-salesman-problem/" title="Permalink to Branch And Bound | Set 6 (Traveling Salesman Problem)">分支与绑定 |第 6 集（旅行推销员问题）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/job-assignment-problem-using-branch-and-bound/">使用 Branch And Bound 的作业分配问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/travelling-salesman-problem-tsp-using-reduced-matrix-method/">使用简化矩阵法的旅行推销员问题 （TSP）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/generate-binary-strings-of-length-n-using-branch-and-bound/">使用 分支和限界法 生成长度为 N 的二进制字符串</a></li>
+</ul>
+<p>快速链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial?utm_source=Website&amp;utm_medium=Landing+Page+Click&amp;utm_campaign=DSA+Page+Tracker&amp;utm_id=DSA-Page-Tracker&amp;utm_term=DSA+Page+Promo&amp;utm_content=Course+Page">学习数据结构和算法 |DSA 教程</a></li>
+</ul>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">修缮内容</th>
-<th style="text-align:center">状态</th>
-<th style="text-align:center">发现时间</th>
-<th style="text-align:center">修复时间</th>
+<th>经典问题</th>
+<th>分支限界法</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">评论数据库输入地址错误导致无法进行评论和查看</td>
-<td style="text-align:center"><code>已修复</code></td>
-<td style="text-align:center">2024.8.13</td>
-<td style="text-align:center">2024.8.14</td>
+<td><strong>0-1 背包问题</strong></td>
+<td>✅</td>
+<td><a target="_blank" rel="noopener" href="http://web.mit.edu/15.053/www/AMP-Chapter-11.pdf">Branch and Bound for Knapsack</a>【<strong>论文</strong>】</td>
 </tr>
 <tr>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<td><strong>部分背包问题</strong></td>
+<td>❌</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>旅行售货员问题</strong></td>
+<td>✅</td>
+<td><a target="_blank" rel="noopener" href="https://visualgo.net/zh/tsp">TSP Branch and Bound Visualization</a>【<strong>动画</strong>】</td>
+</tr>
+<tr>
+<td><strong>最长公共子序列</strong></td>
+<td>❌</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>最小生成树</strong></td>
+<td>❌</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>单源最短路径</strong></td>
+<td>✅ (贝尔曼福特)<code>&lt;br&gt;</code>Bellman Ford</td>
+<td><a target="_blank" rel="noopener" href="https://visualgo.net/zh/sssp">VisuAlgo - Single-Source Shortest Paths</a>【动画】</td>
+</tr>
+<tr>
+<td><strong>八皇后问题</strong></td>
+<td>❌</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>装载问题</strong></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>批处理作业调度</strong></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>最大团问题</strong></td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>装箱问题</strong></td>
+<td>❌</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<span id="more"></span>
-<blockquote>
-<p>有问题对于<strong>修缮内容</strong>可以评论，我会详细<strong>解答</strong>。</p>
-</blockquote>
 
     </div>
     
