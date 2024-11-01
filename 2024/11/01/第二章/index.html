@@ -1,0 +1,861 @@
+
+<!DOCTYPE html>
+<html lang="CN">
+<head>
+    <meta charset="utf-8" />
+    <title>第二章 | LetlMule</title>
+    <meta name="author" content="Zooooa" />
+    <meta name="description" content="Zooooa" />
+    <meta name="keywords" content="Letl, Mule, Zooooa, letl, mule, zooooa, LETL, MULE, ZOOOOA" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+<script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline-meta.min.css" />
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>LETLMULE</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;LETLMULE</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>第二章</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/11/1
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1>第2章 递归与分治策略</h1>
+<h2 id="2-1-递归的概念">2.1 递归的概念</h2>
+<ul>
+<li><strong>递归算法</strong>：直接或间接地调用自身的算法。</li>
+<li><strong>递归函数</strong>：用函数自身给出定义的函数。</li>
+<li><strong>递归分类</strong>：
+<ul>
+<li>直接递归</li>
+<li>间接递归</li>
+</ul>
+</li>
+<li><strong>递归本质</strong>：将原问题转化为同质子问题求解。</li>
+</ul>
+<h3 id="例1-阶乘函数">例1 阶乘函数</h3>
+<p>阶乘函数可递归地定义为：</p>
+<p><strong>边界条件</strong>:</p>
+<pre><code>n = 0
+n! = 1
+n &gt; 0
+n! = n * (n - 1)!
+</code></pre>
+<span id="more"></span>
+<p><strong>递归方程</strong>:<br>
+边界条件与递归方程是递归函数的两个要素，递归函数只有具备了这两个要素，才能在有限次计算后得出结果。</p>
+<h3 id="递归技术的分类">递归技术的分类</h3>
+<ul>
+<li><strong>基于归纳法</strong></li>
+<li><strong>基于分治法</strong></li>
+</ul>
+<p><strong>基于归纳法的递归思想</strong>：<br>
+对于一个规模为 <code>n</code> 的问题 <code>P(n)</code>，归纳法的思想方法是：</p>
+<ol>
+<li><strong>基础步</strong>: <code>a1</code> 是问题 <code>P(1)</code> 的解。</li>
+<li><strong>归纳步</strong>: 对于 <code>1 &lt; k &lt; n</code>，若 <code>b</code> 是问题 <code>P(k)</code> 的解，则 <code>p(b)</code> 是问题 <code>P(k+1)</code> 的解。</li>
+</ol>
+<p>求 <code>P(n)</code> 的解 <code>an</code>，则先求 <code>P(n-1)</code> 的解 <code>an-1</code>，不断递归求解直到 <code>P(1)</code>。得到 <code>P(1)</code> 的解后，返回并进行 <code>P(2)</code> 的运算，直到得到 <code>P(n)</code> 的解。</p>
+<h3 id="例2-多项式求值递归算法">例2 多项式求值递归算法</h3>
+<p><strong>n阶多项式</strong>:</p>
+<pre><code>Pn(x) = an*x^n + an-1*x^(n-1) + … + a1*x + a0
+</code></pre>
+<p><strong>公式改写</strong>:</p>
+<pre><code>Pn(x) = ((…((an)x) + an-1)x + an-2)x + … + a1)x + a0
+</code></pre>
+<p><strong>递归步骤</strong>:</p>
+<ol>
+<li><strong>基础步</strong>: <code>n = 0</code> 时，<code>p0 = a0</code></li>
+<li><strong>归纳步</strong>: 对任意 <code>k</code>，<code>1 ≤ k ≤ n</code>，前 <code>k</code> 步已算出 <code>pk-1</code>:<pre><code>pk-1(x) = an*x^(k-1) + an-1*x^(k-2) + … + an-k+2*x + an-k+1
+</code></pre>
+则有：<pre><code>pk(x) = x * pk-1(x) + an-k
+</code></pre>
+</li>
+</ol>
+<p><strong>代码实现</strong>:</p>
+<pre><code class="language-java">public Float horner_pol(float A[], float x, int n) {
+    if (n == 0)
+        return A[0];
+    else
+        return horner_pol(A, x, n - 1) * x + A[n];
+}
+// 算法时间复杂性：
+// f(0) = 0
+// f(n) = f(n-1) + 1 → f(n) = O(n)
+</code></pre>
+<h3 id="例3-Fibonacci-数列">例3 Fibonacci 数列</h3>
+<p><strong>Fibonacci 数列</strong>:<br>
+无穷数列 <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …</code>，递归定义为：</p>
+<pre><code>F(n) =
+    1, n = 0
+    1, n = 1
+    F(n-1) + F(n-2), n &gt; 1
+</code></pre>
+<p><strong>代码实现</strong>:</p>
+<pre><code class="language-java">public static int fibonacci(int n) {
+    if (n &lt;= 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+</code></pre>
+<p><strong>边界条件</strong>:</p>
+<ul>
+<li><code>n = 0</code> 时，<code>F(n) = 1</code></li>
+<li><code>n = 1</code> 时，<code>F(n) = 1</code></li>
+<li><code>n &gt; 1</code> 时，<code>F(n) = F(n-1) + F(n-2)</code></li>
+</ul>
+<h3 id="例4-Ackermann-函数">例4 Ackermann 函数</h3>
+<p>当一个函数及其一个变量由函数自身定义时，称为双递归函数。</p>
+<p><strong>Ackermann函数</strong> <code>A(n, m)</code> 定义如下：</p>
+<pre><code>A(1, 0) = 2
+A(0, m) = 1, m ≥ 0
+A(n, 0) = n + 2, n ≥ 2
+A(n, m) = A(A(n - 1, m), m - 1), n, m ≥ 1
+</code></pre>
+<p><strong>非递归定义</strong>:<br>
+前两个例子的函数都可以找到相应的非递归方式定义，但 Ackermann 函数无法找到非递归的定义。</p>
+<p><strong>具体例子</strong>:</p>
+<ul>
+<li><code>A(n, 1) = 2 * n</code></li>
+<li><code>A(n, 2) = 2 * n</code></li>
+<li><code>A(n, 3)</code> 等类似更复杂的定义。</li>
+</ul>
+<p><strong>单变量 Ackermann函数</strong>:</p>
+<pre><code>A(n) = A(n, n)
+α(n) = min { k | A(k) ≥ n }
+</code></pre>
+<p><code>α(n)</code> 在复杂度分析中常遇到，对于通常的正整数 <code>n</code>，有 <code>α(n) ≤ 4</code>，但在理论上 <code>α(n)</code> 没有上界，随着 <code>n</code> 增加，它以难以想象的慢速度趋向正无穷大。</p>
+<h3 id="例5-排列问题">例5 排列问题</h3>
+<p>设计一个递归算法生成 <code>n</code> 个元素 <code>{r1, r2, …, rn}</code> 的全排列。</p>
+<p><strong>递归定义</strong>:</p>
+<ul>
+<li>当 <code>n = 1</code> 时，<code>perm(R) = (r)</code>，其中 <code>r</code> 是集合 <code>R</code> 中唯一的元素。</li>
+<li>当 <code>n &gt; 1</code> 时，<code>perm(R)</code> 由 <code>(r1)perm(R1), (r2)perm(R2), …, (rn)perm(Rn)</code> 构成，其中 <code>Ri = R - {ri}</code>。</li>
+</ul>
+<h3 id="例6-整数划分问题">例6 整数划分问题</h3>
+<p>将正整数 <code>n</code> 表示成一系列正整数之和：<code>n = n1 + n2 + … + nk</code>，其中 <code>n1 ≥ n2 ≥ … ≥ nk ≥ 1，k ≥ 1</code>。</p>
+<p><strong>正整数 <code>n</code> 的划分数</strong> <code>p(n)</code> 定义为：</p>
+<pre><code>p(n) = q(n, n)
+</code></pre>
+<p><strong>递归关系</strong> <code>q(n, m)</code>：</p>
+<ol>
+<li><code>q(n, 1) = 1</code>，<code>n ≥ 1</code></li>
+<li><code>q(n, m) = q(n, m-1) + q(n-m, m)</code>, <code>n &gt; m &gt; 1</code></li>
+<li><code>q(n, m) = 1 + q(n, m-1)</code>, <code>n = m</code></li>
+<li><code>q(n, m) = q(n, m)</code>, <code>n &lt; m</code></li>
+</ol>
+<p><strong>代码实现</strong>:</p>
+<pre><code class="language-java">public static int integerPartition(int n, int m) {
+    if (n == 0)
+        return 1;
+    if (m == 0)
+        return 0;
+    if (n &lt; 0)
+        return 0;
+    return integerPartition(n, m - 1) + integerPartition(n - m, m);
+}
+</code></pre>
+<p><strong>正整数 <code>n</code> 的划分数</strong>:<br>
+例如，正整数 <code>6</code> 有如下 <code>11</code> 种不同的划分：</p>
+<ul>
+<li>6；</li>
+<li>5 + 1；</li>
+<li>4 + 2，4 + 1 + 1；</li>
+<li>3 + 3，3 + 2 + 1，3 + 1 + 1 + 1；</li>
+<li>2 + 2 + 2，2 + 2 + 1 + 1，2 + 1 + 1 + 1 + 1；</li>
+<li>1 + 1 + 1 + 1 + 1 + 1。</li>
+</ul>
+<h3 id="例7-汉诺塔问题">例7 汉诺塔问题</h3>
+<p>设 <code>A</code>, <code>B</code>, <code>C</code> 是 3 个塔座。开始时，在塔座 <code>A</code> 上有一叠共 <code>n</code> 个圆盘，这些圆盘自下而上由大到小编号为 <code>1, 2, …, n</code>。现要求将塔座 <code>A</code> 上的圆盘移到塔座 <code>B</code> 上，仍按同样顺序叠置。</p>
+<p><strong>移动规则</strong>：</p>
+<ol>
+<li>每次只能移动 1 个圆盘。</li>
+<li>任何时刻都不允许将较大的圆盘压在较小的圆盘之上。</li>
+<li>在满足移动规则 1 和 2 的前提下，可将圆盘移至 <code>A</code>, <code>B</code>, <code>C</code> 中任一塔座。</li>
+</ol>
+<p><strong>算法思想</strong>：</p>
+<ol>
+<li><strong>基础步</strong>: <code>n = 1</code> 时，将 <code>A</code> 上圆盘移到 <code>B</code> 上。</li>
+<li><strong>归纳步</strong>: <code>n &gt; 1</code> 时，
+<ul>
+<li>将 <code>n-1</code> 个较小圆盘从塔 <code>A</code> 移到塔 <code>C</code>。</li>
+<li>将塔 <code>A</code> 上最大圆盘移到塔 <code>B</code>。</li>
+<li>将 <code>n-1</code> 个较小圆盘从塔 <code>C</code> 移到塔 <code>B</code>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>代码实现</strong>:</p>
+<pre><code class="language-java">public static void hanoi(int n, int a, int b, int c) {
+    if (n &gt; 0) {
+        hanoi(n - 1, a, c, b); // 将n-1个圆盘从A移到C
+        move(a, b);            // 将第n个圆盘从A移到B
+        hanoi(n - 1, c, b, a); // 将n-1个圆盘从C移到B
+    }
+}
+
+public static void move(int from, int to) {
+    System.out.println("Move disk from " + from + " to " + to);
+}
+</code></pre>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li>设 <code>h(n)</code> 为移动 <code>n</code> 个盘子的移动次数。
+<ul>
+<li><code>h(1) = 1</code></li>
+<li><code>h(n) = 2 * h(n-1) + 1 → h(n) = O(2^n)</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>递归小结</strong>:</p>
+<ul>
+<li><strong>优点</strong>：
+<ul>
+<li>结构清晰</li>
+<li>可读性强</li>
+<li>容易用数学归纳法证明算法正确性</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：
+<ul>
+<li>运行效率较低</li>
+<li>耗费的计算时间和存储空间较多</li>
+</ul>
+</li>
+<li><strong>解决方法</strong>：
+<ul>
+<li>消除递归调用，转化为非递归算法</li>
+<li>使用用户定义的栈模拟递归调用</li>
+<li>用递推实现递归函数</li>
+<li>通过尾递归优化</li>
+</ul>
+</li>
+</ul>
+<p><strong>递归示例</strong>:</p>
+<p><strong>线性递归</strong>:</p>
+<pre><code class="language-java">long recursive(long n) {
+    return (n == 1) ? 1 : n * recursive(n - 1);
+}
+</code></pre>
+<p>调用过程：</p>
+<pre><code>recursive(5)
+= 5 * recursive(4)
+= 5 * (4 * recursive(3))
+= 5 * (4 * (3 * recursive(2)))
+= 5 * (4 * (3 * (2 * recursive(1))))
+= 5 * (4 * (3 * (2 * 1)))
+= 5 * (4 * 6)
+= 5 * 24
+= 120
+</code></pre>
+<p><strong>尾递归</strong>:</p>
+<pre><code class="language-java">long tailRecursive(long n, long a) {
+    return (n == 1) ? a : tailRecursive(n - 1, a * n);
+}
+</code></pre>
+<p>调用过程：</p>
+<pre><code>tailRecursive(5, 1)
+= tailRecursive(4, 5)
+= tailRecursive(3, 20)
+= tailRecursive(2, 60)
+= tailRecursive(1, 120)
+= 120
+</code></pre>
+<h2 id="分治思想的提出">分治思想的提出</h2>
+<p>假设 <code>C(x)</code> 为描述问题 <code>x</code> 的复杂度的函数，<code>E(x)</code> 为解决问题 <code>x</code> 的代价函数。</p>
+<p>根据经验，对于两个问题 <code>p1</code> 和 <code>p2</code>，如果 <code>C(p1) &gt; C(p2)</code>，那么 <code>E(p1) &gt; E(p2)</code>。</p>
+<p>进一步得出如下推论：</p>
+<pre><code>C(p1 + p2) &gt; C(p1) + C(p2)
+E(p1 + p2) &gt; E(p1) + E(p2)
+</code></pre>
+<p>因此推断，如果问题 <code>P</code> 能够分解为 <code>n</code> 个子问题，那么解决 <code>n</code> 个子问题的总代价肯定低于直接解决 <code>P</code> 的代价，因为 <code>P</code> 太复杂了，让人无从下手！</p>
+<h2 id="分治算法">分治算法</h2>
+<ul>
+<li><strong>步骤</strong>:
+<ol>
+<li><strong>分解</strong>: 将问题 <code>P</code> 分解为 <code>k</code> 个规模较小、相互独立的子问题 <code>P1, P2, ..., Pk</code>。</li>
+<li><strong>解决</strong>: 递归地解决每个子问题。</li>
+<li><strong>合并</strong>: 将子问题的解合并为原问题的解。</li>
+</ol>
+</li>
+</ul>
+<p><strong>递归树示意</strong>:</p>
+<pre><code>T(n) = k * T(n/m) + f(n)
+</code></pre>
+<h2 id="分治法的适用条件">分治法的适用条件</h2>
+<p>分治法所能解决的问题一般具有以下几个特征：</p>
+<ol>
+<li><strong>问题规模缩小后易于解决</strong>。</li>
+<li><strong>问题可以分解为若干个规模较小的相同问题</strong>，即具有最优子结构性质。</li>
+<li><strong>子问题的解可以合并为原问题的解</strong>。</li>
+<li><strong>子问题相互独立</strong>，不包含公共子问题。</li>
+</ol>
+<p>如果问题具备以上特征，则适合采用分治法进行求解。</p>
+<h2 id="分治法的基本步骤">分治法的基本步骤</h2>
+<pre><code class="language-pseudo">divide-and-conquer(P) {
+    if (|P| &lt;= n0) {
+        adhoc(P); // 解决小规模的问题
+    } else {
+        divide P into smaller subinstances P1, P2, ..., Pk; // 分解问题
+        for (i = 1; i &lt;= k; i++) {
+            yi = divide-and-conquer(Pi); // 递归解各子问题
+        }
+        return merge(y1, ..., yk); // 合并子问题的解
+    }
+}
+</code></pre>
+<p><strong>设计要点</strong>：</p>
+<ul>
+<li>最好使子问题的规模大致相同，以保持递归的平衡。</li>
+<li>递归终止条件明确，避免无限递归。</li>
+</ul>
+<h2 id="分治法的复杂性分析">分治法的复杂性分析</h2>
+<p>一个分治法将规模为 <code>n</code> 的问题分成 <code>k</code> 个规模为 <code>n/m</code> 的子问题去解。设分解阀值 <code>n0 = 1</code>，且 <code>adhoc</code> 解规模为 <code>1</code> 的问题耗费 <code>1</code> 个单位时间。设分解为 <code>k</code> 个子问题及合并步骤需用 <code>f(n)</code> 个单位时间。</p>
+<p>递归关系式：</p>
+<pre><code>T(n) = k * T(n/m) + f(n), n &gt; 1
+T(n) = O(1), n = 1
+</code></pre>
+<p>通过<strong>迭代法</strong>求得方程的解：</p>
+<pre><code>T(n) = O(n^log_m k) + ... + O(n)
+</code></pre>
+<p><strong>渐进性态</strong>：<code>T(n) = O(n^log_m k)</code>，假定 <code>T(n)</code> 是单调上升的。</p>
+<h2 id="二分搜索技术">二分搜索技术</h2>
+<p><strong>问题描述</strong>：<br>
+给定已按升序排列的 <code>n</code> 个元素 <code>a[0:n-1]</code>，找出特定元素 <code>x</code>。</p>
+<p><strong>算法步骤</strong>:</p>
+<ol>
+<li>比较 <code>x</code> 与中间元素 <code>a[mid]</code>。</li>
+<li>如果 <code>x == a[mid]</code>，则找到元素。</li>
+<li>如果 <code>x &lt; a[mid]</code>，则在左半部分继续搜索。</li>
+<li>如果 <code>x &gt; a[mid]</code>，则在右半部分继续搜索。</li>
+</ol>
+<p><strong>代码实现</strong>:</p>
+<pre><code class="language-java">public static int binarySearch(int[] a, int x, int n) {
+    // 在 a[0] &lt;= a[1] &lt;= ... &lt;= a[n-1] 中搜索 x
+    // 找到x时返回其在数组中的位置，否则返回-1
+    int left = 0;
+    int right = n - 1;
+    while (left &lt;= right) {
+        int middle = (left + right) / 2;
+        if (x == a[middle]) return middle;
+        if (x &gt; a[middle]) left = middle + 1;
+        else right = middle - 1;
+    }
+    return -1; // 未找到x
+}
+</code></pre>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li><strong>最坏时间复杂度</strong>: <code>O(log n)</code></li>
+<li><strong>平均时间复杂度</strong>: <code>O(log n)</code></li>
+<li><strong>辅助空间</strong>: <code>O(1)</code></li>
+</ul>
+<p><strong>思考题</strong>: 给定 <code>a</code>，用二分法设计出求 <code>an</code> 的算法。</p>
+<h2 id="最接近点对问题">最接近点对问题</h2>
+<h3 id="一维情况">一维情况</h3>
+<p><strong>问题描述</strong>:<br>
+给定平面上 <code>n</code> 个点的集合 <code>S</code>，找出其中一对点，使得该点对间的距离最小。简化为一维问题，找出 <code>n</code> 个实数中相差最小的两个数。</p>
+<p><strong>算法步骤</strong>:</p>
+<ol>
+<li>对点集合 <code>S</code> 按 <code>x</code> 坐标排序。</li>
+<li>递归地分割 <code>S</code> 为两个子集 <code>S1</code> 和 <code>S2</code>。</li>
+<li>在 <code>S1</code> 和 <code>S2</code> 上分别找出最接近点对 <code>{p1, p2}</code> 和 <code>{q1, q2}</code>，设 <code>d = min(|p1 - p2|, |q1 - q2|)</code>。</li>
+<li>检查跨子集的点对 <code>{p3, q3}</code>，其中 <code>p3 ∈ S1</code> 且 <code>q3 ∈ S2</code>，是否有更小的距离。</li>
+<li>合并结果，得到全局最接近点对。</li>
+</ol>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li><strong>时间复杂度</strong>: <code>O(n log n)</code></li>
+</ul>
+<h3 id="二维情况">二维情况</h3>
+<p><strong>问题描述</strong>:<br>
+在二维平面上，找出最接近的一对点。</p>
+<p><strong>算法步骤</strong>:</p>
+<ol>
+<li>按 <code>x</code> 坐标排序点集合 <code>S</code>，找到中位数 <code>m</code>。</li>
+<li>分割 <code>S</code> 为 <code>S1</code> 和 <code>S2</code>。</li>
+<li>递归地在 <code>S1</code> 和 <code>S2</code> 上找出各自的最小距离 <code>d1</code> 和 <code>d2</code>，设 <code>d = min(d1, d2)</code>。</li>
+<li>在距离分割线 <code>m</code> 的 <code>d</code> 范围内，检查跨子集的点对 <code>{p, q}</code> 是否存在更小的距离。</li>
+<li>合并结果，得到全局最接近点对。</li>
+</ol>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li><strong>时间复杂度</strong>: <code>O(n log n)</code></li>
+</ul>
+<p><strong>关键点</strong>:</p>
+<ul>
+<li>在合并步骤中，通过将点按 <code>y</code> 坐标排序，并只检查距离 <code>m</code> 的 <code>d</code> 范围内的点对，减少检查次数。</li>
+</ul>
+<h2 id="大整数的乘法">大整数的乘法</h2>
+<h3 id="小学方法">小学方法</h3>
+<p><strong>复杂度</strong>: <code>O(n²)</code></p>
+<h3 id="分治法">分治法</h3>
+<p><strong>步骤</strong>:</p>
+<ol>
+<li>将两个 <code>n</code> 位二进制整数 <code>X</code> 和 <code>Y</code> 分割为高位和低位。</li>
+<li>递归计算 <code>ac</code>, <code>bd</code>, <code>(a - b)(c - d)</code> 或 <code>(a + b)(c + d)</code>。</li>
+<li>合并结果，得到最终乘积。</li>
+</ol>
+<p><strong>递归关系</strong>:</p>
+<pre><code>T(n) = 4 * T(n/2) + O(n)
+T(n) = O(n^log_2 4) = O(n^2)
+</code></pre>
+<p><strong>改进方法</strong>:</p>
+<ul>
+<li>通过减少乘法次数，可以将时间复杂度降低到 <code>O(n^log_2 7)</code>，即 <code>O(n^2.81)</code>。</li>
+</ul>
+<p><strong>进一步改进</strong>:</p>
+<ul>
+<li>使用快速傅里叶变换 (FFT) 技术，可以在 <code>O(n log n)</code> 时间内完成大整数乘法。</li>
+</ul>
+<h3 id="快速傅里叶变换-FFT">快速傅里叶变换 (FFT)</h3>
+<p><strong>复杂度</strong>: <code>O(n log n)</code></p>
+<h2 id="Strassen矩阵乘法">Strassen矩阵乘法</h2>
+<h3 id="传统方法">传统方法</h3>
+<p><strong>复杂度</strong>: <code>O(n³)</code></p>
+<h3 id="分治法-2">分治法</h3>
+<p><strong>步骤</strong>:</p>
+<ol>
+<li>将矩阵 <code>A</code> 和 <code>B</code> 分割为四个子矩阵。</li>
+<li>递归计算子矩阵的乘积。</li>
+<li>合并结果，得到最终矩阵 <code>C</code>。</li>
+</ol>
+<p><strong>递归关系</strong>:</p>
+<pre><code>T(n) = 8 * T(n/2) + O(n²)
+T(n) = O(n^log_2 7) ≈ O(n^2.81)
+</code></pre>
+<p><strong>进一步改进</strong>:</p>
+<ul>
+<li>最佳的矩阵乘法算法复杂度为 <code>O(n^2.376)</code>，目前尚未达到 <code>O(n²)</code>。</li>
+</ul>
+<h2 id="棋盘覆盖">棋盘覆盖</h2>
+<p><strong>问题描述</strong>:<br>
+在一个 <code>2^k × 2^k</code> 的棋盘中，恰有一个方格为特殊方格。用 L 型骨牌覆盖除特殊方格外的所有方格，且任意两个 L 型骨牌不得重叠。</p>
+<p><strong>算法步骤</strong>:</p>
+<ol>
+<li><strong>分割</strong>: 将棋盘分为四个 <code>2^(k-1) × 2^(k-1)</code> 的子棋盘。</li>
+<li><strong>定位</strong>: 特殊方格位于其中一个子棋盘，其余子棋盘无特殊方格。</li>
+<li><strong>覆盖</strong>: 用一个 L 型骨牌覆盖其他三个子棋盘的中心区域，形成新的特殊方格。</li>
+<li><strong>递归</strong>: 对四个子棋盘递归执行上述步骤，直到棋盘规模为 <code>1 × 1</code>。</li>
+</ol>
+<p><strong>代码实现</strong>:</p>
+<pre><code class="language-java">public void chessBoard(int tr, int tc, int dr, int dc, int size) {
+    if (size == 1) return;
+    int s = size / 2;
+    int t = tile++;
+    
+    // 判断特殊方格所在的子棋盘
+    boolean topLeft = (dr &lt; tr + s) &amp;&amp; (dc &lt; tc + s);
+    boolean topRight = (dr &lt; tr + s) &amp;&amp; (dc &gt;= tc + s);
+    boolean bottomLeft = (dr &gt;= tr + s) &amp;&amp; (dc &lt; tc + s);
+    boolean bottomRight = (dr &gt;= tr + s) &amp;&amp; (dc &gt;= tc + s);
+    
+    // 覆盖中心
+    if (!topLeft) board[tr + s - 1][tc + s - 1] = t;
+    if (!topRight) board[tr + s - 1][tc + s] = t;
+    if (!bottomLeft) board[tr + s][tc + s - 1] = t;
+    if (!bottomRight) board[tr + s][tc + s] = t;
+    
+    // 递归覆盖四个子棋盘
+    chessBoard(tr, tc, dr, dc, s); // 左上
+    chessBoard(tr, tc + s, tr + s - 1, tc + s, s); // 右上
+    chessBoard(tr + s, tc, tr + s, tc + s - 1, s); // 左下
+    chessBoard(tr + s, tc + s, tr + s, tc + s, s); // 右下
+}
+</code></pre>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li><strong>时间复杂度</strong>: <code>O(n²)</code>，其中 <code>n = 2^k</code>。</li>
+</ul>
+<h2 id="快速排序">快速排序</h2>
+<p><strong>概述</strong>:<br>
+快速排序是对冒泡排序的一种改进，由 C.A.R. Hoare 于 1962 年提出。</p>
+<p><strong>算法步骤</strong>:</p>
+<ol>
+<li>选择一个基准元素。</li>
+<li>分区：将数组分为两部分，左边部分小于等于基准，右边部分大于等于基准。</li>
+<li>递归地对左右两部分进行排序。</li>
+</ol>
+<p><strong>代码实现</strong>:</p>
+<pre><code class="language-java">private static void qSort(int p, int r) {
+    if (p &lt; r) {
+        int q = partition(p, r); // 划分数组
+        qSort(p, q - 1);         // 排序左半部分
+        qSort(q + 1, r);         // 排序右半部分
+    }
+}
+
+private static int partition(int p, int r) {
+    int i = p;
+    int j = r + 1;
+    Comparable x = a[p];
+    while (true) {
+        while (a[++i].compareTo(x) &lt; 0) if (i == r) break;
+        while (a[--j].compareTo(x) &gt; 0) if (j == p) break;
+        if (i &gt;= j) break;
+        swap(a, i, j);
+    }
+    swap(a, p, j);
+    return j;
+}
+</code></pre>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li><strong>最坏时间复杂度</strong>: <code>O(n²)</code></li>
+<li><strong>平均时间复杂度</strong>: <code>O(n log n)</code></li>
+<li><strong>空间复杂度</strong>: <code>O(log n)</code>（递归调用栈）</li>
+</ul>
+<p><strong>优化方法</strong>:</p>
+<ul>
+<li>随机选择基准元素，避免最坏情况发生。</li>
+</ul>
+<pre><code class="language-java">private static int randomizedPartition(int p, int r) {
+    int i = random(p, r);
+    swap(a, i, p);
+    return partition(p, r);
+}
+</code></pre>
+<p><strong>稳定性</strong>:</p>
+<ul>
+<li>快速排序是不稳定的。</li>
+</ul>
+<h2 id="最接近点对问题-2">最接近点对问题</h2>
+<h3 id="一维情况-2">一维情况</h3>
+<p><strong>问题描述</strong>:<br>
+给定 <code>n</code> 个按升序排列的实数 <code>x1, x2, ..., xn</code>，找出两数之间的最小距离。</p>
+<p><strong>算法步骤</strong>:</p>
+<ol>
+<li>排序所有点。</li>
+<li>递归地将点集分为两部分。</li>
+<li>在左右两部分分别找出最小距离 <code>d1</code> 和 <code>d2</code>，设 <code>d = min(d1, d2)</code>。</li>
+<li>检查跨分割线 <code>m</code> 的点对 <code>{p3, q3}</code>，其中 <code>p3 ∈ S1</code> 且 <code>q3 ∈ S2</code>，是否存在更小的距离。</li>
+<li>返回最小距离。</li>
+</ol>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li><strong>时间复杂度</strong>: <code>O(n log n)</code></li>
+</ul>
+<h3 id="二维情况-2">二维情况</h3>
+<p><strong>问题描述</strong>:<br>
+在二维平面上，给定 <code>n</code> 个点，找出两点之间的最小距离。</p>
+<p><strong>算法步骤</strong>:</p>
+<ol>
+<li>按 <code>x</code> 坐标排序点集 <code>S</code>，找到中位数 <code>m</code>，将 <code>S</code> 分为 <code>S1</code> 和 <code>S2</code>。</li>
+<li>递归地在 <code>S1</code> 和 <code>S2</code> 上找出各自的最小距离 <code>d1</code> 和 <code>d2</code>，设 <code>d = min(d1, d2)</code>。</li>
+<li>在距离分割线 <code>m</code> 的 <code>d</code> 范围内，检查跨子集的点对 <code>{p, q}</code> 是否存在更小的距离。</li>
+<li>通过按 <code>y</code> 坐标排序，并只检查相邻的点对，减少检查次数。</li>
+<li>返回最小距离。</li>
+</ol>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li><strong>时间复杂度</strong>: <code>O(n log n)</code></li>
+</ul>
+<h2 id="循环赛日程表">循环赛日程表</h2>
+<p><strong>问题描述</strong>:<br>
+设计一个满足以下要求的比赛日程表：</p>
+<ol>
+<li>每个选手必须与其他 <code>n-1</code> 个选手各赛一次。</li>
+<li>每个选手一天只能赛一次。</li>
+<li>循环赛一共进行 <code>n-1</code> 天。</li>
+</ol>
+<p><strong>算法步骤</strong>:</p>
+<ol>
+<li><strong>分治策略</strong>: 将所有选手分为两半，利用较小规模的比赛日程表设计较大规模的日程表。</li>
+<li>递归地分割选手，直到只剩下 2 个选手时，直接安排比赛。</li>
+<li>合并子问题的解，形成完整的比赛日程表。</li>
+</ol>
+<p><strong>示意图</strong>:</p>
+<pre><code>Day 1:
+  - 比赛1: 选手A vs 选手B
+  - 比赛2: 选手C vs 选手D
+  ...
+Day 2:
+  - 比赛1: 选手A vs 选手C
+  - 比赛2: 选手B vs 选手D
+  ...
+...
+Day n-1:
+  - 所有选手完成各自的比赛
+</code></pre>
+<p><strong>复杂度分析</strong>:</p>
+<ul>
+<li><strong>时间复杂度</strong>: <code>O(n log n)</code></li>
+<li><strong>空间复杂度</strong>: <code>O(n)</code></li>
+</ul>
+<h2 id="递归小结">递归小结</h2>
+<p><strong>优点</strong>:</p>
+<ul>
+<li>结构清晰，易于理解和实现。</li>
+<li>可读性强，便于使用数学归纳法证明算法的正确性。</li>
+</ul>
+<p><strong>缺点</strong>:</p>
+<ul>
+<li>运行效率较低，计算时间和存储空间消耗较大。</li>
+<li>可能导致栈溢出，特别是在递归深度较大的情况下。</li>
+</ul>
+<p><strong>解决方法</strong>:</p>
+<ol>
+<li><strong>消除递归</strong>: 将递归算法转化为非递归算法。</li>
+<li><strong>使用栈模拟</strong>: 采用用户定义的栈模拟系统的递归调用栈。</li>
+<li><strong>递推实现</strong>: 用递推方式实现递归函数。</li>
+<li><strong>尾递归优化</strong>: 通过尾递归优化，将递归转化为迭代，提升效率。</li>
+</ol>
+<p><strong>示例</strong>:</p>
+<p><strong>线性递归</strong>:</p>
+<pre><code class="language-java">long recursive(long n) {
+    return (n == 1) ? 1 : n * recursive(n - 1);
+}
+</code></pre>
+<p><strong>尾递归</strong>:</p>
+<pre><code class="language-java">long tailRecursive(long n, long a) {
+    return (n == 1) ? a : tailRecursive(n - 1, a * n);
+}
+</code></pre>
+<p>调用过程：</p>
+<pre><code>recursive(5)
+= 5 * recursive(4)
+= 5 * (4 * recursive(3))
+= 5 * (4 * (3 * recursive(2)))
+= 5 * (4 * (3 * (2 * recursive(1))))
+= 5 * (4 * (3 * (2 * 1)))
+= 5 * (4 * 6)
+= 5 * 24
+= 120
+
+tailRecursive(5, 1)
+= tailRecursive(4, 5)
+= tailRecursive(3, 20)
+= tailRecursive(2, 60)
+= tailRecursive(1, 120)
+= 120
+</code></pre>
+<p><strong>总结</strong>:</p>
+<ul>
+<li>递归是一种强大的算法设计技术，适用于许多具有自相似结构的问题。</li>
+<li>在设计递归算法时，需确保递归终止条件明确，避免无限递归。</li>
+<li>优化递归算法可以显著提升其性能，尤其是在处理大规模问题时。</li>
+</ul>
+<hr>
+
+    </div>
+    
+    
+    
+    
+    
+    <div id="comment">
+        <div id="waline-container"></div>
+    </div>
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2024 - 2024 LetlMule
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Zooooa
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://blog.letlmule.fun/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
+
+
+    
+</body>
+</html>
