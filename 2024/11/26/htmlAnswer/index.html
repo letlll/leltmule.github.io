@@ -3,7 +3,7 @@
 <html lang="CN">
 <head>
     <meta charset="utf-8" />
-    <title>LetlMule</title>
+    <title>htmlAnswer | LetlMule</title>
     <meta name="author" content="Zooooa" />
     <meta name="description" content="Zooooa" />
     <meta name="keywords" content="Letl, Mule, Zooooa, letl, mule, zooooa, LETL, MULE, ZOOOOA" />
@@ -42,7 +42,13 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+<script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" />
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline-meta.min.css" />
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -154,326 +160,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/background.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>LetlMule</h1>
-                <h3>Zooooa</h3>
-                <h5>Zooooa</h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>htmlAnswer</h1>
     </div>
-</div>
-<div
-    id="home-posts-wrap"
-    ref="homePostsWrap"
-    true
->
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E5%88%86%E6%94%AF/">
-        <h2 class="post-title">概念分支</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/10/29
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="深入理解分支限界法">深入理解分支限界法</h3>
-<p>分支限界法（Branch and Bound）是一种系统性的方法，用于解决组合优化问题，特别是那些规模庞大、搜索空间巨大的问题。通过分支和限界的策略，分支限界法能够有效地剪枝，减少不必要的搜索，从而提高求解效率。</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E5%88%86%E6%94%AF/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E5%9B%9E%E6%BA%AF/">
-        <h2 class="post-title">概念回溯</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/10/29
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="深入理解回溯法">深入理解回溯法</h3>
-<p>回溯法（Backtracking）是一种系统化的搜索策略，用于在解决组合优化问题时探索所有可能的解决方案。它通过逐步构建候选解，并在发现当前路径不可能产生有效解时进行“回溯”，从而有效地缩小搜索空间。</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E5%9B%9E%E6%BA%AF/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E5%8A%A8%E6%80%81/">
-        <h2 class="post-title">概念动态</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/10/29
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="深入理解动态规划">深入理解动态规划</h3>
-<p>动态规划（Dynamic Programming，简称DP）是一种用于解决具有重叠子问题和最优子结构性质的问题的高效算法设计方法。通过将复杂问题分解为更简单的子问题，并保存这些子问题的结果以避免重复计算，动态规划能够显著提高算法的效率。</p>
-<hr>
-<h4 id="目录">目录</h4>
-<ol>
-<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%A6%82%E8%BF%B0">动态规划概述</a></li>
-<li><a href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86">算法原理</a>
-<ul>
-<li><a href="#%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0">理论学习</a></li>
-<li><a href="#%E7%AE%97%E6%B3%95%E6%8E%A8%E5%AF%BC">算法推导</a></li>
-</ul>
-</li>
-<li><a href="#%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90">逻辑分析</a>
-<ul>
-<li><a href="#%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE">思维导图</a></li>
-</ul>
-</li>
-<li><a href="#Java%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B">Java代码示例</a>
-<ul>
-<li><a href="#%E7%A4%BA%E4%BE%8B%E4%B8%80-0-1-%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98">示例一：0-1 背包问题</a></li>
-<li><a href="#%E7%A4%BA%E4%BE%8B%E4%BA%8C-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97lcs">示例二：最长公共子序列（LCS）</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A">代码解释</a></li>
-<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
-</ol>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E5%8A%A8%E6%80%81/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E8%B4%AA%E5%BF%83/">
-        <h2 class="post-title">概念贪心</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/10/29
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="深入理解贪心算法">深入理解贪心算法</h3>
-<p>贪心算法是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是全局最好或最优的算法。贪心算法在解决某些特定类型的问题时非常有效，但并不适用于所有问题。</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/10/29/%E6%A6%82%E5%BF%B5%E8%B4%AA%E5%BF%83/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/08/15/MarkDown/">
-        <h2 class="post-title">MarkDown</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/8/15
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E6%91%98%E8%A6%81">基本语法（摘要）</a>
-<ul>
-<li><a href="#1-%E6%A0%87%E9%A2%98-headings">1. 标题 (Headings)</a></li>
-<li><a href="#2-%E8%84%9A%E6%B3%A8-footnotes">2. 脚注 (Footnotes)</a></li>
-<li><a href="#3-%E5%88%97%E8%A1%A8-lists">3. 列表 (Lists)</a></li>
-<li><a href="#4-%E7%BD%91%E7%BB%9C%E9%93%BE%E6%8E%A5-hyperlinks">4. 网络链接 (Hyperlinks)</a></li>
-<li><a href="#5-%E5%9B%BE%E7%89%87%E5%BC%95%E5%85%A5-images">5. 图片引入 (Images)</a></li>
-<li><a href="#6-%E9%AB%98%E7%BA%A7%E9%93%BE%E6%8E%A5-advanced-links">6. 高级链接 (Advanced Links)</a></li>
-</ul>
-</li>
-<li><a href="#%E5%9B%BE%E8%A1%A8">图表</a>
-<ul>
-<li><a href="#1-%E6%A8%AA%E5%90%91%E6%B5%81%E7%A8%8B%E5%9B%BE">1. 横向流程图</a></li>
-<li><a href="#2-%E7%AB%96%E5%90%91%E6%B5%81%E7%A8%8B%E5%9B%BE">2. 竖向流程图</a></li>
-<li><a href="#3-%E6%A0%87%E5%87%86%E6%B5%81%E7%A8%8B%E5%9B%BE">3. 标准流程图</a></li>
-<li><a href="#4-%E6%A0%87%E5%87%86%E6%B5%81%E7%A8%8B%E5%9B%BE%E6%A8%AA%E5%90%91">4. 标准流程图（横向）</a></li>
-<li><a href="#5-uml-%E6%97%B6%E5%BA%8F%E5%9B%BE">5. UML 时序图</a></li>
-<li><a href="#6-%E5%A4%8D%E6%9D%82%E7%9A%84-uml-%E6%97%B6%E5%BA%8F%E5%9B%BE">6. 复杂的 UML 时序图</a></li>
-<li><a href="#7-uml-%E6%A0%87%E5%87%86%E6%97%B6%E5%BA%8F%E5%9B%BE">7. UML 标准时序图</a></li>
-<li><a href="#8-%E7%94%98%E7%89%B9%E5%9B%BE">8. 甘特图</a></li>
-</ul>
-</li>
-<li><a href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%A4%A7%E7%BA%B2">自动生成大纲</a><br>
-- <a href="#%E4%BD%BF%E7%94%A8-markdown-all-in-one-%E6%8F%92%E4%BB%B6">使用 <code>Markdown All in One</code> 插件</a><br>
-- <a href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7">使用命令行工具</a></li>
-<li><a href="#vscode%E7%8E%AF%E5%A2%83">VSCode环境</a>
-<ul>
-<li><a href="#%E5%9C%A8-vscode-%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83">在 VSCode 中配置环境</a></li>
-</ul>
-</li>
-</ul>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/08/15/MarkDown/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/08/12/%E4%BC%8A%E5%A7%8B/">
-        <h2 class="post-title">伊始</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/8/12
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1>网站建设<code>LetlMule</code></h1>
-<h4 id="1-未来规划">1.未来规划</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><code>Mule</code>片隅</th>
-<th style="text-align:center"><code>Zooooa</code>片隅</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">页面调整</td>
-<td style="text-align:center">个性化设计</td>
-</tr>
-<tr>
-<td style="text-align:center">学习产出</td>
-<td style="text-align:center">平面设计</td>
-</tr>
-<tr>
-<td style="text-align:center">功能优化</td>
-<td style="text-align:center">版面设计</td>
-</tr>
-</tbody>
-</table>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/08/12/%E4%BC%8A%E5%A7%8B/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/11/26/htmlAnswer/">
-        <h2 class="post-title">htmlAnswer</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -483,10 +174,9 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1>第01章习题答案</h1>
+    
+    <div class="content" v-pre>
+        <h1>第01章习题答案</h1>
 <h1>第一章习题答案</h1>
 <h3 id="1-什么是Internet和万维网，它们的区别在哪里？">1. 什么是Internet和万维网，它们的区别在哪里？</h3>
 <pre><code>答：Internet是由成千上万台计算机设备互相连接，基于TCP/IP协议进行通信从而形成的全球网络。万维网是Internet上最重要的服务之一，也常被简称为“W3”或“Web”。万维网主要使用HTTP协议将互联网上的资源结合在了一起，并在浏览器中以Web页面的方式呈现给用户。
@@ -782,114 +472,17 @@ APGS定位技术定位速度快、范围广、精确度也得到了提高。目�
 答：本题无标准答案，可参考例11-19的效果。
 </code></pre>
 
-            
-        </div>
     </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/11/26/htmlAnswer/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/08/13/%E4%BF%AE%E7%BC%AE%E6%8A%A5%E5%91%8A/">
-        <h2 class="post-title">修缮报告</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/8/13
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1>修缮</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">修缮内容</th>
-<th style="text-align:center">状态</th>
-<th style="text-align:center">发现时间</th>
-<th style="text-align:center">修复时间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">评论数据库输入地址错误导致无法进行评论和查看</td>
-<td style="text-align:center"><code>已修复</code></td>
-<td style="text-align:center">2024.8.13</td>
-<td style="text-align:center">2024.8.14</td>
-</tr>
-<tr>
-<td style="text-align:center">代码块的粘连显示</td>
-<td style="text-align:center"><code>已修复</code></td>
-<td style="text-align:center">2024.10.29</td>
-<td style="text-align:center">2024.10.29</td>
-</tr>
-</tbody>
-</table>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2024/08/13/%E4%BF%AE%E7%BC%AE%E6%8A%A5%E5%91%8A/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <a class="page-num" href="/">
-        <i class="fa-solid fa-caret-left fa-fw"></i>
-    </a>
-    <a class="page-num" href="/">1</a>
-    <span class="page-omit">...</span>
-    
-    <span class="current">2</span>
     
     
     
     
-</div>
-
+    <div id="comment">
+        <div id="waline-container"></div>
     </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">Zooooa</div>
-        <div class="description">
-            <p>花晓人至 笑靥自生</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
+    
     
 </div>
 
@@ -921,6 +514,29 @@ APGS定位技术定位速度快、范围广、精确度也得到了提高。目�
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+<script>
+    Waline.init({
+        el: "#waline-container",
+        serverURL: "https://blog.letlmule.fun/",
+        commentCount: true,
+        pageview: false,
+        emoji: "https://unpkg.com/@waline/emojis@1.0.1/weibo,https://unpkg.com/@waline/emojis@1.0.1/alus,https://unpkg.com/@waline/emojis@1.0.1/bilibili,https://unpkg.com/@waline/emojis@1.0.1/qq,https://unpkg.com/@waline/emojis@1.0.1/tieba,https://unpkg.com/@waline/emojis@1.0.1/tw-emoji".split(","),
+        meta: "nick,mail,link".split(","),
+        requiredMeta: "nick".split(","),
+        lang: "zh-CN",
+        wordLimit: 0,
+        pageSize: "10",
+        login: "enable",
+        
+    });
+</script>
+
+
+
     
 </body>
 </html>
